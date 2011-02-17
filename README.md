@@ -1,5 +1,5 @@
 # Limpid: Administration Theme for CMS Made Simple
-([www.cmsmadesimple.org](www.cmsmadesimple.org/))
+([www.cmsmadesimple.org](http://www.cmsmadesimple.org/))
 
 ## Info
 Designed for maximum efficiency and user-friendliness when working with the backend of the Content-Management-System Made Simple.
