@@ -17,6 +17,12 @@ Clone 'limpid' (`git clone git://github.com/jquery/jquery.git`) to /admin/themes
 
 ## Compatibility
 
+### CMS Made Simple
+
+- Currently only extensively tested with CMS-MS >= 1.9.1
+
+### Browser Support
+
 - Currently only extensively tested with Safari 5.0.3
 - Known to work well with Firefox 4.0 Beta too
 - Support for IE 7 & 8 will be added soon
