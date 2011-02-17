@@ -2,6 +2,7 @@
 ([www.cmsmadesimple.org](http://www.cmsmadesimple.org/))
 
 ## Info
+**Warning: This is a preview and not necessarily meant for productive use yet.**
 Designed for maximum efficiency and user-friendliness when working with the backend of the Content-Management-System Made Simple.
 
 Created using modern webstandards and technologies for lightweight code and easy maintainability.
