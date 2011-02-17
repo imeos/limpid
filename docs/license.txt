@@ -1,0 +1,9 @@
+@ Admin Theme - Name: limpid
+#
+#
+@ CSS, Layout Images and some icons by:
+Author:limpid
+#
+@ Package - cmsmadesimple.org
+#
+#

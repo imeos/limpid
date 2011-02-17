@@ -1,0 +1,6 @@
+limpid CMS-MadeSimple-Team
+=========================
+
+Chris Seelus (chris@imeos.com)
+
+-- enjoy!
