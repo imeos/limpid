@@ -515,7 +515,7 @@ class limpidTheme extends AdminTheme
         if (! $thisItem['show_in_menu'] || strlen($thisItem['url']) < 1)
           continue;
         if ($count++ > 0)
-          echo ", ";
+          echo '<span class="seperator">,</span> ';
         echo "<a class=\"itemsublink\" href=\"".$thisItem['url'];
         echo "\">".$thisItem['title']."</a>";
       }

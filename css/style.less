@@ -20,7 +20,7 @@
   0. Colors, LESS-definitions, reset-import
   -------------------------------------------------- */
   @import "reset.less";
-  
+
 
 /*--------------------------------------------------
   1. Layout
@@ -378,7 +378,7 @@
   p.itemtext {
     text-align:center;
     font-weight:500;
-    line-height:180%;
+    line-height:140%;
     padding:0 20px;
     
     span.description {
@@ -395,6 +395,10 @@
       font-size:1.12em;
       text-transform:uppercase;
       padding:5px 0 0 0;
+    }
+
+    span.seperator {
+      display:none;
     }
   }
   p.itemicon {
@@ -428,51 +432,47 @@
     text-decoration:none;
     outline:none;
   }
-  a.itemlink {
-  	:link,
-    :visited {
-    	color:#000;
-    	font-weight:bold;
-    	font-size: 1.19em;
-    	letter-spacing:-0.08em;
-    	text-decoration:none;
-    	display:inline-block;
-    	margin-bottom:8px;
-    }
-    :hover,
-    :focus {
-      color:@maincolor;
-    }
+  a.itemlink:link,
+  a.itemlink:visited {
+    color:#000;
+  	font-weight:bold;
+  	font-size: 1.19em;
+  	letter-spacing:-0.08em;
+  	text-decoration:none;
+  	display:inline-block;
+  	margin-bottom:8px;
   }
-  a.itemsublink {
-    :link,
-    :visited {
-    	color:#fff;
-    	font-weight:800;
-    	text-decoration:none;
-    	white-space:nowrap;
-    	text-shadow:0 -1px 0 @black50;
-    	padding:3px 7px;
-    	.bg-lingradient-y(#cccac8, #a1a4a6);
-    	border-radius:14px;
-    }
-    :hover,
-    :focus {
-  	  text-shadow:0 -1px 0 @black30;
-      .bg-lingradient-y(#ffb400, @maincolor);
-    }
+  a.itemlink:hover,
+  a.itemlink:focus {
+    color:@maincolor;
+  }
+  a.itemsublink:link,
+  a.itemsublink:visited {
+  	color:#fff;
+  	font-weight:800;
+  	text-decoration:none;
+  	vertical-align:bottom;
+  	display:inline-block;
+  	white-space:nowrap;
+  	text-shadow:0 -1px 0 @black50;
+  	margin:1px 0; padding:2px 7px;
+  	.bg-lingradient-y(#cccac8, #a1a4a6);
+  	border-radius:14px;
+  }
+  a.itemsublink:hover,
+  a.itemsublink:focus {
+  	text-shadow:0 -1px 0 @black30;
+    .bg-lingradient-y(#ffb400, @maincolor);
   }
   /* footerlinks */
-  footer a {
-    :link,
-    :visited {
-      font-weight:normal;
-      color:#999;
-    }
-    :hover,
-    :focus {
-      color:#c57600;
-    }
+  footer a:link,
+  footer a:visited {
+    font-weight:normal;
+    color:#999;
+  }
+  footer a:hover,
+  footer a:focus {
+    color:#c57600;
   }
   /* Back to Menu */
   p.pageback {
@@ -480,29 +480,27 @@
     position:fixed; top:50px; right:20px; z-index:2;
     margin:0; padding:0;
     
-    a {
-      :link,
-      :visited {
-        color:#ddd;
-        font-weight:500;
-      }
-      :hover,
-      :focus {
-        color:@maincolor;
-        text-decoration:none;
-        text-shadow:0 0 15px #000;
-      }
+    a:link,
+    a:visited {
+      color:#ddd;
+      font-weight:500;
+    }
+    a:hover,
+    a:focus {
+      color:@maincolor;
+      text-decoration:none;
+      text-shadow:0 0 15px #000;
     }
   }
   /* breadcrumblinks */
-  p.breadcrumbs a {
-    :link,
-    :visited {
+  p.breadcrumbs {
+    a:link,
+    a:visited {
       color:#ddd;
       text-decoration:none;
     }
-    :hover,
-    :focus {
+    a:hover,
+    a:focus {
       color:@maincolor;
       text-shadow:0 0 15px #000;
     }
@@ -1320,7 +1318,7 @@
   	background:#222;
   	border: 1px solid #000;
   	border-radius:0 0 8px 8px;
-  	.box-shadow(0, 5px, 140px, @black60);
+  	.box-shadow(0, 15px, 70px, @black40);
   }
   body.login div.box a:focus,
   body.login div.box a:hover {
