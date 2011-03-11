@@ -534,7 +534,7 @@ class limpidTheme extends AdminTheme
   function StartRighthandColumn() {
       //START bookmarks - RIGHT
       echo '<div class="navt_menu">'."\n";
-      echo '<div id="navt_display" class="navt_show" onclick="change(\'navt_display\', \'navt_hide\', \'navt_show\'); change(\'navt_container\', \'invisible\', \'visible\');"></div>'."\n";
+      echo '<div id="navt_display" class="navt_show" onclick="change(\'navt_display\', \'navt_hide\', \'navt_show\'); change(\'navt_container\', \'invisible\', \'visible\');"><span class="arrowt" title=" '.lang('bookmarks').'">&#9650;</span></div>'."\n";
       echo '<div id="navt_container" class="invisible">'."\n";
       echo '<div id="navt_tabs">'."\n";
       if (get_preference($this->userid, 'bookmarks')) {

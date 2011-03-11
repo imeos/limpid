@@ -41,7 +41,7 @@
   }
   
   header {
-    position:fixed; top:0; z-index:2;
+    position:fixed; top:0; z-index:5;
     width:100%;
     padding:0;
     
@@ -128,7 +128,7 @@
   }
   
   footer {
-    position:fixed; bottom:0; left:0; z-index:1000;
+    position:fixed; bottom:0; left:0; z-index:3;
     height:27px; width:100%;
     padding:0;
     background:#777;
@@ -406,19 +406,6 @@
     img{
     	max-height:36px;
     }
-  }
-  div.shortcuts {
-    display:none;
-    width:20%;
-    
-    h3 {
-      float:none;
-      padding:0;
-    }
-  }
-  div.navt_menu {
-  	position:fixed; top:0; right:20px;
-  	z-index:1110;
   }
   
   
@@ -876,29 +863,52 @@
     	border: none;
     }
   }
-  div.shortcuts {
-  	h3 {
-    	padding-top: 1em;
-    }
+  div.navt_menu {
+    position:fixed; bottom:0; left:0; z-index:4;
+    width:220px;
     
-    ul {
-    	margin: 0.5em 0 0 0;
-    	padding-left: 0;
+    div#navt_display {
+      position:absolute; bottom:0; left:0;
+      color:#222;
+      font-weight:500;
+      text-align:left;
+      text-shadow:0 1px 0px @white60;
+      height:27px; width:50px;
+      
+      span.arrowt {
+        display:block;
+        font-size:20px;
+        -moz-font-size:16px;
+        height:100%; width:20px;
+        padding:2px 9px 0 15px;
+        vertical-align:top;
+        border-right:1px solid @black30;
+      }
+      &.navt_show span.arrowt {
+      	cursor:n-resize;
+      }
+      &.navt_hide span.arrowt {
+      	cursor:s-resize;
+      }
     }
-    
-    li {
-  	  line-height: 1.3em;
-    	list-style: none;
-      padding:0.5em 0 0.5em 1em;
-    	background: url(themes/limpid/images/icons/topfiles/shortcut.gif) no-repeat 0 0.5em;
-    }
-    
-    a {
-    	color: #343434;
+    div#navt_container {
+      color:#fff;
+      margin-bottom:27px; padding:20px 20px 60px 25px;
+      .bg-lingradient-y(#000, #111);
+      
+      div#navt_bookmarks {
+        font-weight:bold;
+      }
     }
   }
-  div.shortcuts a:hover, table.pagetable a:hover {
-  	color:@maincolor;
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    div#navt_display span.arrowt {
+      font-size:12px!important;
+      padding-top:6px!important;
+    }
+  }
+  div.shortcuts {
+    display:none;
   }
   /* Error-Messages */
   div.pageerrorcontainer, 
@@ -988,7 +998,11 @@
   }
   p.pageoptions {
   	color: #343434;
-  	padding-top: 5px;
+  	padding:2px 0 12px 0;
+
+  	img {
+  	  vertical-align:middle;
+  	}
   }
   .pagerows {
   	font-size: 1.3em;

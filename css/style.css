@@ -386,7 +386,7 @@ div#container {
 header {
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
   padding: 0;
 }
@@ -491,7 +491,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 3;
   height: 27px;
   width: 100%;
   padding: 0;
@@ -757,20 +757,6 @@ p.itemicon {
 }
 p.itemicon img {
   max-height: 36px;
-}
-div.shortcuts {
-  display: none;
-  width: 20%;
-}
-div.shortcuts h3 {
-  float: none;
-  padding: 0;
-}
-div.navt_menu {
-  position: fixed;
-  top: 0;
-  right: 20px;
-  z-index: 1110;
 }
 /*--------------------------------------------------
   4. Links
@@ -1208,24 +1194,59 @@ div.itemoverflow img {
 div.itemoverflow a {
   border: none;
 }
-div.shortcuts h3 {
-  padding-top: 1em;
+div.navt_menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  width: 220px;
 }
-div.shortcuts ul {
-  margin: 0.5em 0 0 0;
-  padding-left: 0;
+div.navt_menu div#navt_display {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #222;
+  font-weight: 500;
+  text-align: left;
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.6);
+  height: 27px;
+  width: 50px;
 }
-div.shortcuts li {
-  line-height: 1.3em;
-  list-style: none;
-  padding: 0.5em 0 0.5em 1em;
-  background: url(themes/limpid/images/icons/topfiles/shortcut.gif) no-repeat 0 0.5em;
+div.navt_menu div#navt_display span.arrowt {
+  display: block;
+  font-size: 20px;
+  -moz-font-size: 16px;
+  height: 100%;
+  width: 20px;
+  padding: 2px 9px 0 15px;
+  vertical-align: top;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
-div.shortcuts a {
-  color: #343434;
+div.navt_menu div#navt_display.navt_show span.arrowt {
+  cursor: n-resize;
 }
-div.shortcuts a:hover, table.pagetable a:hover {
-  color: #ff9900;
+div.navt_menu div#navt_display.navt_hide span.arrowt {
+  cursor: s-resize;
+}
+div.navt_menu div#navt_container {
+  color: #fff;
+  margin-bottom: 27px;
+  padding: 20px 20px 60px 25px;
+  background: #111111;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#111111));
+  background: -moz-linear-gradient(top, #000000 0%, #111111 100%);
+}
+div.navt_menu div#navt_container div#navt_bookmarks {
+  font-weight: bold;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  div#navt_display span.arrowt {
+    font-size: 12px!important;
+    padding-top: 6px!important;
+  }
+}
+div.shortcuts {
+  display: none;
 }
 /* Error-Messages */
 div.pageerrorcontainer, div.pageerrorinstalldir {
@@ -1320,7 +1341,10 @@ p.pagesubtitle {
 }
 p.pageoptions {
   color: #343434;
-  padding-top: 5px;
+  padding: 2px 0 12px 0;
+}
+p.pageoptions img {
+  vertical-align: middle;
 }
 .pagerows {
   font-size: 1.3em;
