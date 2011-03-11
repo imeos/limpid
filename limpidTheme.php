@@ -69,11 +69,15 @@ class limpidTheme extends AdminTheme
       <!--[if lt IE 9]>
         <link rel="stylesheet" type="text/css" href="themes/limpid/css/ie8.css" />
       <![endif]-->
+      <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="themes/limpid/css/ie7.css" />
+      <![endif]-->
 
       <?php $this->OutputHeaderJavascript(); ?>
 
       <!--[if lt IE 9]>
-      <script src="themes/limpid/includes/js/ie-html5shim.js"></script>
+      <script type="text/javascript" src="themes/limpid/includes/js/ie-html5shim.js"></script>
+      <script type="text/javascript" src="themes/limpid/includes/js/selectivizr.js"></script>
       <script>
       $(document).ready(function(){
         $('.arrowr').replaceWith(' > ');
@@ -238,7 +242,9 @@ class limpidTheme extends AdminTheme
   8. DisplayAllSectionPages()
   -------------------------------------------------- */
   function DisplayAllSectionPages() {
+    $count = 0;
     foreach ($this->menuItems as $thisSection=>$menuItem) {
+      $count += 1;
       if ( $menuItem['parent'] != -1 ) {
         continue;
       }
@@ -248,7 +254,7 @@ class limpidTheme extends AdminTheme
       if ( $menuItem['url'] == 'index.php'  || strlen($menuItem['url']) < 1 ) {
         continue;
       }
-      echo "<div class=\"itemmenucontainer\">";
+      echo '<div class="itemmenucontainer">';
         echo '<p class="itemicon">';
         $iconSpec = $thisSection;
         if ( $menuItem['url'] == '../index.php' ) {

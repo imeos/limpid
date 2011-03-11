@@ -405,7 +405,6 @@ header span.title {
   background: #ff9900;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
   background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
@@ -433,8 +432,8 @@ header div.nav {
   min-width: 968px;
   margin: 0;
   background: #888888;
-  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#888888));
-  background: -moz-linear-gradient(top, #efefef 0%, #888888 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#888888));
+  background: -moz-linear-gradient(top, #cccccc 0%, #888888 100%);
   border-top: 1px solid #777;
   border-bottom: 1px solid #111;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
@@ -509,8 +508,8 @@ footer p {
   padding: 4px 20px;
   border-top: 1px solid #eee;
   background: #777777;
-  background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#777777));
-  background: -moz-linear-gradient(top, #cccccc 0%, #777777 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#bbbbbb), to(#777777));
+  background: -moz-linear-gradient(top, #bbbbbb 0%, #777777 100%);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -617,7 +616,7 @@ ul#nav-main {
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-ul#nav-main :after {
+ul#nav-main:after {
   content: ".";
   display: block;
   clear: both;
@@ -642,7 +641,7 @@ ul#nav-main li a {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
-ul#nav-main li a.module, ul#nav-main li a.first_module {
+ul#nav-main li a .module, ul#nav-main li a .first_module {
   font-style: italic;
 }
 ul#nav-main li a:hover {
@@ -651,7 +650,7 @@ ul#nav-main li a:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
   background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
 }
-ul#nav-main li a.active {
+ul#nav-main li a .active {
   color: #ff9900;
 }
 ul#nav-main li ul {
@@ -704,7 +703,7 @@ div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover, div#nav-icons_all ul#na
 div.MainMenu {
   padding: 20px 0 50px 220px;
 }
-div.MainMenu :after {
+div.MainMenu:after {
   content: ".";
   display: block;
   clear: both;

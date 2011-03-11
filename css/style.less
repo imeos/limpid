@@ -55,7 +55,6 @@
       text-shadow:0 -1px 0px @black30;
       padding:2px 12px;
       .bg-lingradient-y(#ffb400, @maincolor);
-      border-top:1px solid @white40;
       border-radius:20px;
       .box-shadow-addinset(0px, 1px, 0, @white40, 0px, 1px, 5px, @black30);
       
@@ -81,7 +80,7 @@
       height:45px;
       min-width:968px;
       margin:0;
-    	.bg-lingradient-y(#efefef, #888);
+    	.bg-lingradient-y(#ccc, #888);
       border-top:1px solid #777;
     	border-bottom:1px solid #111;
     	.box-shadow(0, 1px, 8px, @black30);
@@ -143,7 +142,7 @@
       min-width:926px;
       margin:1px 0 0 0; padding:4px 20px;
       border-top:1px solid #eee;
-      .bg-lingradient-y(#ccc, #777);
+      .bg-lingradient-y(#bbb, #777);
       .box-shadow(0, 3px, 7px, @black30);
     }
   }
@@ -251,7 +250,7 @@
     border-top: 1px solid @black50;
     border-bottom: 1px solid @white10;
     
-    :after {
+  &:after {
     	content:".";
     	display:block;
     	clear:both;
@@ -274,20 +273,20 @@
         padding:8px 20px;
         border-top: 1px solid @white10;
         border-bottom: 1px solid @black50;
-      }
-      
-      a.module,
-      a.first_module {
-        font-style:italic;
-      }
-      
-      a:hover {
-        color:#fff;
-        .bg-lingradient-y(#ffb400, @maincolor);
-      }
-      
-      a.active {
-      	color:@maincolor;
+
+        .module,
+        .first_module {
+          font-style:italic;
+        }
+
+        &:hover {
+          color:#fff;
+          .bg-lingradient-y(#ffb400, @maincolor);
+        }
+
+        .active {
+        	color:@maincolor;
+        }
       }
     }
     
@@ -348,7 +347,7 @@
   div.MainMenu {
     padding:20px 0 50px 220px;
     
-    :after {
+    &:after {
     	content:".";
     	display:block;
     	clear:both;

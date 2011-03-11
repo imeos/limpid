@@ -7,28 +7,25 @@
 
 */
 
-div#container {
-  z-index:1;
+header div.nav {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#888888',GradientType=0 );
 }
-header {
-  overflow: hidden;
-  height:127px;
-}
-header div.breadcrumbs {
-  position:relative;
-}
-ul#nav-main li ul,
-ul#nav-main li ul li
-ul#nav-main li ul a {
-  height:0px;
-  display:none;
-  visibility:hidden;
+footer p {
+  font-size:.89em;
+  font-weight:bold;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbbbbb', endColorstr='#777777',GradientType=0 );
 }
 
-body.login div.box {
-	padding-top:60px;
+div.breadcrumbs {display:none;}
+
+
+ul#nav-main li a {
+  border-top:1px solid #222;
+  border-bottom-color:1px solid #111;
 }
-body.login h1 {
-  top:-30px;
-  padding:50px;
+
+
+#page_tabs div {
+  display:block;
+  float:left;
 }
