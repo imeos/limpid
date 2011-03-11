@@ -1,6 +1,7 @@
 Version 1.1
 -----------------
 - CSS Improvements
+- Added Shortcuts
 
 
 Version 1.0
