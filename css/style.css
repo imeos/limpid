@@ -432,8 +432,8 @@ header div.nav {
   min-width: 968px;
   margin: 0;
   background: #888888;
-  background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#888888));
-  background: -moz-linear-gradient(top, #cccccc 0%, #888888 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#888888));
+  background: -moz-linear-gradient(top, #eeeeee 0%, #888888 100%);
   border-top: 1px solid #777;
   border-bottom: 1px solid #111;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
