@@ -389,11 +389,17 @@ header {
   z-index: 5;
   width: 100%;
   padding: 0;
+  background: -moz-linear-gradient(left, #000000 0%, #00ccff 30%, #00ff00 50%, #ffff00 70%, #ff0000 90%, #000000 100%);
+  /* firefox */
+
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000000), color-stop(30%, #00ccff), color-stop(50%, #00ff00), color-stop(70%, #ffff00), color-stop(90%, #ff0000), color-stop(100%, #000000));
+  /* webkit */
+
 }
 header span.title {
   position: absolute;
   top: 7px;
-  left: 12px;
+  left: 6px;
   z-index: 1;
   cursor: default;
   color: #eee;
@@ -401,14 +407,11 @@ header span.title {
   font-weight: 600;
   letter-spacing: -0.07em;
   text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
-  padding: 2px 12px;
-  background: #ff9900;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
-  background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
+  padding: 2px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.05)));
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
   border-radius: 20px;
-  box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
 }
 header span.title span.admin {
   font-weight: 400;
@@ -420,9 +423,8 @@ header span.user {
   z-index: 1;
   cursor: default;
   color: #fff;
-  font-size: 1.06em;
   font-weight: 500;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9);
   float: right;
 }
 header span.user span.username {
@@ -433,9 +435,9 @@ header div.nav {
   height: 45px;
   min-width: 968px;
   margin: 0;
-  background: #888888;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#888888));
-  background: -moz-linear-gradient(top, #eeeeee 0%, #888888 100%);
+  background: #282828;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 40, 40, 0.85)), to(#282828));
+  background: -moz-linear-gradient(top, rgba(40, 40, 40, 0.85) 0%, #282828 100%);
   border-top: 1px solid #777;
   border-bottom: 1px solid #111;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
@@ -497,22 +499,22 @@ footer {
   height: 27px;
   width: 100%;
   padding: 0;
-  background: #777;
+  background: #111;
 }
 footer p {
-  color: #333;
+  color: #aaa;
   cursor: default;
   font-size: .95em;
   font-weight: 500;
   text-align: center;
-  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
   min-width: 926px;
   margin: 1px 0 0 0;
   padding: 4px 20px;
-  border-top: 1px solid #eee;
-  background: #777777;
-  background: -webkit-gradient(linear, left top, left bottom, from(#bbbbbb), to(#777777));
-  background: -moz-linear-gradient(top, #bbbbbb 0%, #777777 100%);
+  border-top: 1px solid #555;
+  background: #222222;
+  background: -webkit-gradient(linear, left top, left bottom, from(#252525), to(#222222));
+  background: -moz-linear-gradient(top, #252525 0%, #222222 100%);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -802,7 +804,7 @@ a.itemsublink:hover, a.itemsublink:focus {
 /* footerlinks */
 footer a:link, footer a:visited {
   font-weight: normal;
-  color: #333;
+  color: #fff;
 }
 footer a:hover, footer a:focus {
   color: #c57600;
@@ -1205,10 +1207,10 @@ div.navt_menu div#navt_display {
   position: absolute;
   bottom: 0;
   left: 0;
-  color: #222;
+  color: #fff;
   font-weight: 500;
   text-align: left;
-  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
   height: 27px;
   width: 50px;
 }
@@ -1221,6 +1223,9 @@ div.navt_menu div#navt_display span.arrowt {
   padding: 2px 9px 0 15px;
   vertical-align: top;
   border-right: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
 }
 div.navt_menu div#navt_display.navt_show span.arrowt {
   cursor: n-resize;
@@ -1740,9 +1745,10 @@ body.login p.username input, body.login p.password input {
   margin: 0;
   padding: 11px 11px 11px 42px;
   border-radius: 4px;
-  border: 1px solid #000;
-  box-shadow: 0 1px 0 #777;
-  -webkit-box-shadow: 0 1px 0 #777;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 body.login p.buttons {
   text-align: right;
