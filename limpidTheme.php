@@ -243,8 +243,10 @@ class limpidTheme extends AdminTheme
   -------------------------------------------------- */
   function DisplayAllSectionPages() {
     $count = 0;
+    $i = 0;
+    $len = count($this->menuItems);
     foreach ($this->menuItems as $thisSection=>$menuItem) {
-      $count += 1;
+      $i++;
       if ( $menuItem['parent'] != -1 ) {
         continue;
       }
@@ -253,6 +255,10 @@ class limpidTheme extends AdminTheme
       }
       if ( $menuItem['url'] == 'index.php'  || strlen($menuItem['url']) < 1 ) {
         continue;
+      }
+      $count++;
+      if( $count == 1 || $count % 5 == 0 ) {
+        echo '<div class="row">';
       }
       echo '<div class="itemmenucontainer">';
         echo '<p class="itemicon">';
@@ -276,7 +282,11 @@ class limpidTheme extends AdminTheme
         $this->ListSectionPages($thisSection);
         echo '</p>';
       echo '</div>';
+      if( ($count != 0 && $count % 4 == 0)) {
+        echo '</div><!--/row-->';
+      }
     }
+    echo '</div><!--/row-->';
   }
   
 /*--------------------------------------------------

@@ -420,7 +420,9 @@ header span.user {
   z-index: 1;
   cursor: default;
   color: #fff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+  font-size: 1.06em;
+  font-weight: 500;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
   float: right;
 }
 header span.user span.username {
@@ -499,6 +501,7 @@ footer {
 }
 footer p {
   color: #333;
+  cursor: default;
   font-size: .95em;
   font-weight: 500;
   text-align: center;
@@ -701,30 +704,26 @@ div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover, div#nav-icons_all ul#na
 }
 /* Nav Tools  */
 div.MainMenu {
-  padding: 20px 0 50px 220px;
-}
-div.MainMenu:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-div.itemmenucontainer {
   float: left;
-  min-height: 19em;
-  width: 25%;
-  margin: 0;
+  padding: 10px 0 50px 220px;
 }
-div.itemmenucontainer h3 {
+div.MainMenu div.row {
+  float: left;
+}
+div.MainMenu div.itemmenucontainer {
+  float: left;
+  width: 25%;
+  min-height: 16em;
+  padding-bottom: 40px;
+}
+div.MainMenu div.itemmenucontainer h3 {
   font-size: 1.19em;
   font-weight: bold;
   text-align: center;
   margin: 0;
   padding: 0 20px;
 }
-div.itemmenucontainer h3 a {
+div.MainMenu div.itemmenucontainer h3 a {
   text-decoration: none;
 }
 p.itemtext {
@@ -813,8 +812,8 @@ p.pageback {
   display: inline-block;
   position: fixed;
   top: 50px;
-  right: 20px;
-  z-index: 2;
+  right: 30px;
+  z-index: 5;
   margin: 0;
   padding: 0;
 }
@@ -1180,6 +1179,7 @@ a:hover img {
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 #page_content {
+  margin-bottom: 10px;
   padding: 20px;
   background: #dce2e5;
   border-bottom-right-radius: 8px;
