@@ -37,15 +37,15 @@
   div#container {
     font-size:1em;
     height:100%; width:100%;
-    min-height:100%; min-width:1000px;
+    min-height:100%; min-width:980px;
   }
   
   header {
     position:fixed; top:0; z-index:5;
     width:100%;
+    min-width:960px;
     padding:0;
-    background: -moz-linear-gradient(left, #000000 0%, #00CCFF 30%, #00FF00 50%, #FFFF00 70%, #FF0000 90%, #000000 100%); /* firefox */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000000), color-stop(30%,#00CCFF), color-stop(50%,#00FF00), color-stop(70%,#FFFF00), color-stop(90%,#FF0000), color-stop(100%,#000000)); /* webkit */
+    .bg-lingradient-y(#eee, #777);
     
     span.title {
       position:absolute; top:7px; left:6px; z-index:1;
@@ -54,9 +54,9 @@
       font-size:1.69em;
       font-weight:600;
       letter-spacing:-0.07em;
-      text-shadow:0 -1px 0px @black30;
+      text-shadow:0 1px 3px @black50;
+      .bg-lingradient-y(@black60, @black10);
       padding:2px 14px;
-      .bg-lingradient-y(@white20, @white05);
       border-radius:20px;
       
       span.admin {
@@ -65,12 +65,12 @@
     }
     
     span.user {
-      position:absolute; top:15px; right:120px; z-index:1;
+      float:right;
       cursor:default;
       color:#fff;
       font-weight:500;
-      text-shadow:0 -1px 0 @black90;
-      float:right;
+      text-shadow:0 -1px 0 @black60;
+      margin:14px 120px 0 0;
       
       span.username {
         font-weight:900;
@@ -80,9 +80,7 @@
     div.nav {
       position:relative;
       height:45px;
-      min-width:968px;
       margin:0;
-    	.bg-lingradient-y(rgba(40,40,40,.85), rgba(40,40,40,1));
       border-top:1px solid #777;
     	border-bottom:1px solid #111;
     	.box-shadow(0, 1px, 8px, @black30);
@@ -132,20 +130,20 @@
   footer {
     position:fixed; bottom:0; left:0; z-index:3;
     height:27px; width:100%;
+    min-width:980px;
     padding:0;
-    background:#111;
+    background:#555;
     
     p {
-      color:#aaa;
+      color:#555;
       cursor:default;
       font-size:.95em;
       font-weight:500;
       text-align:center;
-      text-shadow:0 -1px 0px @black90;
-      min-width:926px;
-      margin:1px 0 0 0; padding:4px 20px;
-      border-top:1px solid #555;
-      .bg-lingradient-y(#252525, #222);
+      text-shadow:0 1px 0px @white80;
+      margin:1px 0 0 0!important; padding:4px 20px;
+      border-top:1px solid #eee;
+      .bg-lingradient-y(#ccc, #777);
       .box-shadow(0, 3px, 7px, @black30);
     }
   }
@@ -162,21 +160,22 @@
   2. Typography
   -------------------------------------------------- */
   h1 {
-  	font-size: 2em;
+  	font-size:2em;
   }
   h2 {
-  	font-size: 1.5em;
+  	font-size:1.5em;
   	margin-top:1em;
   }
   h3 {
-  	font-size: 1.2em;
+  	font-size:1.2em;
   	margin-top:1em;
   }
   h4 {
-  	font-size: 1em;
+  	font-size:1em;
+  	text-transform:uppercase;
   }
   p {
-  	font-size: 1em;
+  	font-size:1em;
   	margin:0;
   	line-height: 18px;
   }
@@ -217,7 +216,7 @@
   	clear: left;
   	overflow: hidden;
   	width:auto;
-    padding:8px 0 0 0;
+    padding:8px 0 3px 0;
     border-bottom:1px dotted #cfdce5;
     
     .pagetext {
@@ -232,6 +231,10 @@
       float:left; clear:left;
       margin:8px 0 0 0; padding:0;
       min-width:690px;
+      
+      img {
+        vertical-align:middle;
+      }
     }
   }
   div.pagetext b {
@@ -283,11 +286,11 @@
         }
 
         &:hover {
-          color:#fff;
+          color:#fff!important;
           .bg-lingradient-y(#ffb400, @maincolor);
         }
 
-        .active {
+        &.active {
         	color:@maincolor;
         }
       }
@@ -453,8 +456,8 @@
   /* footerlinks */
   footer a:link,
   footer a:visited {
-    font-weight:normal;
-    color:#fff;
+    font-weight:bold;
+    color:#333;
   }
   footer a:hover,
   footer a:focus {
@@ -650,47 +653,48 @@
   	width:100%;
   	margin:1em 0 0 0;
     border-spacing:0px;
+    border-collapse:separate;
     
-    th {
-    	color:#fff;
-    	font-weight:bold;
-    	font-size:1em;
-    	text-align:left;
-    	white-space:nowrap;
-    	line-height:40px;
-    	height:40px;
-    	padding:0 8px;
-    	.bg-lingradient-y(#444, #222);
+    thead {
+      .bg-colorgradient-y;
+    
+      th {
+      	color:#fff;
+      	font-weight:bold;
+      	font-size:1em;
+      	text-align:left;
+      	text-shadow:0 1px 2px @black50;
+      	white-space:nowrap;
+      	line-height:40px;
+      	height:40px;
+      	padding:0 4px;
+      	.bg-lingradient-y(#555, #222);
+        
+        &:first-child {border-top-left-radius:5px;}
+        &:last-child {border-top-right-radius:5px;}        
       
-      .active {
-      	color:#d9cfc5;
+        .active {
+        	color:#d9cfc5;
       	
-      	a {
-        	color:#C6D5D9;
+        	a {
+          	color:#C6D5D9;
+          	text-decoration:underline;
+          }
+        }
+      
+        .pagepos {
+        	text-align:center;
+        }
+      
+        a:hover {
+        	color: #fff;
         	text-decoration:underline;
         }
-      }
       
-      .pagepos {
-      	text-align:center;
+        input {
+        	vertical-align:middle;
+        }
       }
-      
-      a:hover {
-      	color: #fff;
-      	text-decoration:underline;
-      }
-      
-      input {
-      	vertical-align:middle;
-      }
-    }
-
-  	th:first-child {
-    	border-top-left-radius:3px;
-    }
-    
-    th:last-child {
-    	border-top-right-radius:3px;
     }
     
     td {
@@ -699,7 +703,7 @@
     	font-size:.95em;
     	letter-spacing:-.08em;
     	line-height:120%;
-    	padding:9px 8px;
+    	padding:9px 4px;
     	vertical-align:middle;
     }
     
@@ -744,7 +748,7 @@
   	background-color:#fff;
   }
   tr.row2 {
-  	background-color:whiteSmoke;
+  	background-color:#f1f1f1;
   }
   tr.row1hover {
   	background:#d8e0e5;
@@ -869,10 +873,10 @@
     
     div#navt_display {
       position:absolute; bottom:0; left:0;
-      color:#fff;
+      color:#333;
       font-weight:500;
       text-align:left;
-      text-shadow:0 -1px 0px @black90;
+      text-shadow:0 1px 0px @white60;
       height:27px; width:50px;
       
       span.arrowt {
@@ -933,7 +937,7 @@
   div.pagemcontainer {
     position:fixed; top:0; left:0; z-index:1000;
     text-align:center;
-    width:100%; min-width:1000px;
+    width:100%; min-width:960px;
     
     p {
       display:inline-block;
@@ -1097,7 +1101,6 @@
   /*h2, 3, 4, etc  inside*/
   div.pagecontainer .h-inside {
   	float: left;
-  	color:#f90;
   	padding-top: 8px;
   	padding-right: 1em;
   	margin-bottom: 0.5em;
@@ -1131,23 +1134,23 @@
   	.bg-lingradient-y(#777, #555);
     border:1px solid @black60;
   	border-radius:3px;
+  	
+  	&:hover {
+  	  .bg-lingradient-y(#757575, #656565);
+      border:1px solid @black60;
+    }
+    
+    a {
+    	color:#fff;
+    	font-weight:bold;
+    	text-decoration:none;
+    }
+    
+    .NotificationsPriority1 {color:#fcd6d6;}
+    .NotificationsPriority2 {color:#e8e856;}
+    .NotificationsPriority3 {color:#86e856;}
   }
-  .full-Notifications:hover {
-	  .bg-lingradient-y(#757575, #656565);
-    border:1px solid @black60;
-  }
-  .full-Notifications a, .full-Notifications a:visited {
-  	color: #999;
-  	text-decoration: none;
-  	font-weight: bold;
-  }
-  .full-Notifications a:hover, .full-Notifications a:active {
-  	color: #999;
-  	text-decoration: underline;
-  }
-  .full-Notifications .NotificationsPriority1 {color:#ffb4b4;}
-  .full-Notifications .NotificationsPriority2 {color:#e8e856;}
-  .full-Notifications .NotificationsPriority3 {color:#86e856;}
+  
   .notifications-show,
   .notifications-hide {
     float:left;
@@ -1184,12 +1187,13 @@
   .full-Notifications ul#Notifications-area {
     clear:both;
   	list-style: none;
-  	margin:0; padding:0;
+  	margin:0; padding:0 0 6px 0;
   	border-top:1px dotted @black50;
   }
   .full-Notifications ul#Notifications-area li {
-  	list-style: none;
-  	margin:0; padding:8px 0 0 0;
+  	list-style:circle;
+  	list-style-position:outside;
+  	margin:0 0 0 12px; padding:8px 0 0 5px;
   }
   .full-Notifications ul#Notifications-area:after {
   	content: ".";

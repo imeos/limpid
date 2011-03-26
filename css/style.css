@@ -320,6 +320,10 @@ a:link {
 /*--------------------------------------------------
   4. LESS Declarations/definitions
   -------------------------------------------------- */
+.bg-colorgradient-y {
+  background: -moz-linear-gradient(left, #000000 0%, #00ccff 30%, #00ff00 50%, #ffff00 70%, #ff0000 90%, #000000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000000), color-stop(30%, #00ccff), color-stop(50%, #00ff00), color-stop(70%, #ffff00), color-stop(90%, #ff0000), color-stop(100%, #000000));
+}
 /*--------------------------------------------------
   5. Webkit Scrollbars
   -------------------------------------------------- 
@@ -381,20 +385,18 @@ div#container {
   height: 100%;
   width: 100%;
   min-height: 100%;
-  min-width: 1000px;
+  min-width: 980px;
 }
 header {
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
+  min-width: 960px;
   padding: 0;
-  background: -moz-linear-gradient(left, #000000 0%, #00ccff 30%, #00ff00 50%, #ffff00 70%, #ff0000 90%, #000000 100%);
-  /* firefox */
-
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000000), color-stop(30%, #00ccff), color-stop(50%, #00ff00), color-stop(70%, #ffff00), color-stop(90%, #ff0000), color-stop(100%, #000000));
-  /* webkit */
-
+  background: #777777;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#777777));
+  background: -moz-linear-gradient(top, #eeeeee 0%, #777777 100%);
 }
 header span.title {
   position: absolute;
@@ -406,26 +408,23 @@ header span.title {
   font-size: 1.69em;
   font-weight: 600;
   letter-spacing: -0.07em;
-  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.1)));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 100%);
   padding: 2px 14px;
-  background: rgba(255, 255, 255, 0.05);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.05)));
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
   border-radius: 20px;
 }
 header span.title span.admin {
   font-weight: 400;
 }
 header span.user {
-  position: absolute;
-  top: 15px;
-  right: 120px;
-  z-index: 1;
+  float: right;
   cursor: default;
   color: #fff;
   font-weight: 500;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9);
-  float: right;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+  margin: 14px 120px 0 0;
 }
 header span.user span.username {
   font-weight: 900;
@@ -433,11 +432,7 @@ header span.user span.username {
 header div.nav {
   position: relative;
   height: 45px;
-  min-width: 968px;
   margin: 0;
-  background: #282828;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 40, 40, 0.85)), to(#282828));
-  background: -moz-linear-gradient(top, rgba(40, 40, 40, 0.85) 0%, #282828 100%);
   border-top: 1px solid #777;
   border-bottom: 1px solid #111;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
@@ -498,23 +493,23 @@ footer {
   z-index: 3;
   height: 27px;
   width: 100%;
+  min-width: 980px;
   padding: 0;
-  background: #111;
+  background: #555;
 }
 footer p {
-  color: #aaa;
+  color: #555;
   cursor: default;
   font-size: .95em;
   font-weight: 500;
   text-align: center;
-  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
-  min-width: 926px;
-  margin: 1px 0 0 0;
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.8);
+  margin: 1px 0 0 0!important;
   padding: 4px 20px;
-  border-top: 1px solid #555;
-  background: #222222;
-  background: -webkit-gradient(linear, left top, left bottom, from(#252525), to(#222222));
-  background: -moz-linear-gradient(top, #252525 0%, #222222 100%);
+  border-top: 1px solid #eee;
+  background: #777777;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#777777));
+  background: -moz-linear-gradient(top, #cccccc 0%, #777777 100%);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -544,6 +539,7 @@ h3 {
 }
 h4 {
   font-size: 1em;
+  text-transform: uppercase;
 }
 p {
   font-size: 1em;
@@ -586,7 +582,7 @@ div.pageoverflow {
   clear: left;
   overflow: hidden;
   width: auto;
-  padding: 8px 0 0 0;
+  padding: 8px 0 3px 0;
   border-bottom: 1px dotted #cfdce5;
 }
 div.pageoverflow .pagetext {
@@ -602,6 +598,9 @@ div.pageoverflow p.pageinput, div.pageoverflow div.pageinput {
   margin: 8px 0 0 0;
   padding: 0;
   min-width: 690px;
+}
+div.pageoverflow p.pageinput img, div.pageoverflow div.pageinput img {
+  vertical-align: middle;
 }
 div.pagetext b {
   clear: both;
@@ -650,12 +649,12 @@ ul#nav-main li a .module, ul#nav-main li a .first_module {
   font-style: italic;
 }
 ul#nav-main li a:hover {
-  color: #fff;
+  color: #fff!important;
   background: #ff9900;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
   background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
 }
-ul#nav-main li a .active {
+ul#nav-main li a.active {
   color: #ff9900;
 }
 ul#nav-main li ul {
@@ -803,8 +802,8 @@ a.itemsublink:hover, a.itemsublink:focus {
 }
 /* footerlinks */
 footer a:link, footer a:visited {
-  font-weight: normal;
-  color: #fff;
+  font-weight: bold;
+  color: #333;
 }
 footer a:hover, footer a:focus {
   color: #c57600;
@@ -998,42 +997,48 @@ table.pagetable {
   width: 100%;
   margin: 1em 0 0 0;
   border-spacing: 0px;
+  border-collapse: separate;
 }
-table.pagetable th {
+table.pagetable thead {
+  background: -moz-linear-gradient(left, #000000 0%, #00ccff 30%, #00ff00 50%, #ffff00 70%, #ff0000 90%, #000000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000000), color-stop(30%, #00ccff), color-stop(50%, #00ff00), color-stop(70%, #ffff00), color-stop(90%, #ff0000), color-stop(100%, #000000));
+}
+table.pagetable thead th {
   color: #fff;
   font-weight: bold;
   font-size: 1em;
   text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
   line-height: 40px;
   height: 40px;
-  padding: 0 8px;
+  padding: 0 4px;
   background: #222222;
-  background: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#222222));
-  background: -moz-linear-gradient(top, #444444 0%, #222222 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#222222));
+  background: -moz-linear-gradient(top, #555555 0%, #222222 100%);
 }
-table.pagetable th .active {
+table.pagetable thead th:first-child {
+  border-top-left-radius: 5px;
+}
+table.pagetable thead th:last-child {
+  border-top-right-radius: 5px;
+}
+table.pagetable thead th .active {
   color: #d9cfc5;
 }
-table.pagetable th .active a {
+table.pagetable thead th .active a {
   color: #C6D5D9;
   text-decoration: underline;
 }
-table.pagetable th .pagepos {
+table.pagetable thead th .pagepos {
   text-align: center;
 }
-table.pagetable th a:hover {
+table.pagetable thead th a:hover {
   color: #fff;
   text-decoration: underline;
 }
-table.pagetable th input {
+table.pagetable thead th input {
   vertical-align: middle;
-}
-table.pagetable th:first-child {
-  border-top-left-radius: 3px;
-}
-table.pagetable th:last-child {
-  border-top-right-radius: 3px;
 }
 table.pagetable td {
   color: #000;
@@ -1041,7 +1046,7 @@ table.pagetable td {
   font-size: .95em;
   letter-spacing: -0.08em;
   line-height: 120%;
-  padding: 9px 8px;
+  padding: 9px 4px;
   vertical-align: middle;
 }
 table.pagetable a {
@@ -1084,7 +1089,7 @@ tr.row1 {
   background-color: #fff;
 }
 tr.row2 {
-  background-color: whiteSmoke;
+  background-color: #f1f1f1;
 }
 tr.row1hover {
   background: #d8e0e5;
@@ -1207,10 +1212,10 @@ div.navt_menu div#navt_display {
   position: absolute;
   bottom: 0;
   left: 0;
-  color: #fff;
+  color: #333;
   font-weight: 500;
   text-align: left;
-  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.6);
   height: 27px;
   width: 50px;
 }
@@ -1276,7 +1281,7 @@ div.pagemcontainer {
   z-index: 1000;
   text-align: center;
   width: 100%;
-  min-width: 1000px;
+  min-width: 960px;
 }
 div.pagemcontainer p {
   display: inline-block;
@@ -1434,7 +1439,6 @@ span.fm-messages {
 /*h2, 3, 4, etc  inside*/
 div.pagecontainer .h-inside {
   float: left;
-  color: #f90;
   padding-top: 8px;
   padding-right: 1em;
   margin-bottom: 0.5em;
@@ -1479,17 +1483,13 @@ div.pagecontainer .h-inside {
   background: -moz-linear-gradient(top, #757575 0%, #656565 100%);
   border: 1px solid rgba(0, 0, 0, 0.6);
 }
-.full-Notifications a, .full-Notifications a:visited {
-  color: #999;
-  text-decoration: none;
+.full-Notifications a {
+  color: #fff;
   font-weight: bold;
-}
-.full-Notifications a:hover, .full-Notifications a:active {
-  color: #999;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .full-Notifications .NotificationsPriority1 {
-  color: #ffb4b4;
+  color: #fcd6d6;
 }
 .full-Notifications .NotificationsPriority2 {
   color: #e8e856;
@@ -1536,13 +1536,14 @@ div#notifications-container {
   clear: both;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 6px 0;
   border-top: 1px dotted rgba(0, 0, 0, 0.5);
 }
 .full-Notifications ul#Notifications-area li {
-  list-style: none;
-  margin: 0;
-  padding: 8px 0 0 0;
+  list-style: circle;
+  list-style-position: outside;
+  margin: 0 0 0 12px;
+  padding: 8px 0 0 5px;
 }
 .full-Notifications ul#Notifications-area:after {
   content: ".";
