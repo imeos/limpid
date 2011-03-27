@@ -1045,8 +1045,11 @@ table.pagetable thead th .active a {
 table.pagetable thead th .pagepos {
   text-align: center;
 }
-table.pagetable thead th a:hover {
+table.pagetable thead th a:link, table.pagetable thead th a:visited {
   color: #fff;
+  text-decoration: none;
+}
+table.pagetable thead th a:focus, table.pagetable thead th a:hover {
   text-decoration: underline;
 }
 table.pagetable thead th input {

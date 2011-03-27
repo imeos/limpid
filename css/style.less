@@ -693,10 +693,17 @@
         .pagepos {
         	text-align:center;
         }
-      
-        a:hover {
-        	color: #fff;
-        	text-decoration:underline;
+        
+        a {
+          &:link,
+          &:visited {
+            color:#fff;
+            text-decoration:none;
+          }
+          &:focus,
+          &:hover {
+            text-decoration:underline;
+          }
         }
       
         input {
