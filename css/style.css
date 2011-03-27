@@ -863,8 +863,7 @@ li p {
   6. Forms
   -------------------------------------------------- */
 form {
-  margin: 0px;
-  display: inline;
+  margin: 0 0 0 -4px;
 }
 legend {
   font-weight: bold;
