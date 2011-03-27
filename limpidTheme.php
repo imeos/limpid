@@ -159,7 +159,7 @@ class limpidTheme extends AdminTheme
   -------------------------------------------------- */
   function DisplayMainDivStart()
   {
-  	echo '<div id="content">';
+  	echo '<div id="contents">';
     echo '<div class="spacer"></div>';
     //MENU
     echo '<div class="nav">';

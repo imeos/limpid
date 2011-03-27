@@ -455,17 +455,17 @@ header div.breadcrumbs {
 header div.breadcrumbs span.arrowr {
   padding: 0 10px;
 }
-div#content {
+div#contents {
   min-height: 100%;
   margin: 0;
   padding: 0 22px;
   background: #fff;
 }
-div#content div.spacer {
+div#contents div.spacer {
   height: 110px;
   width: 100%;
 }
-div#content div.nav {
+div#contents div.nav {
   overflow: auto;
   position: fixed;
   top: 47px;
@@ -481,7 +481,7 @@ div#content div.nav {
   -webkit-box-shadow: inset -5px 0 8px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: inset -5px 0 8px rgba(0, 0, 0, 0.9);
 }
-div#content div.pagecontainer {
+div#contents div.pagecontainer {
   margin-left: 220px;
   padding-bottom: 60px;
   background: transparent;
@@ -953,6 +953,7 @@ input.pagecheckbox {
   border: none;
 }
 textarea.pagebigtextarea, textarea.pagesmalltextarea, .pageinput textarea {
+  z-index: 20;
   font-family: Monaco,monospace;
   font-size: .95em;
   padding: 4px;
