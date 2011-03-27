@@ -291,7 +291,7 @@ button {
 .aleft {
   text-align: left;
 }
-.clear {
+.clear, .clearb {
   clear: both;
 }
 .hidden {
