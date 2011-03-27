@@ -590,13 +590,13 @@ div.pageoverflow .pagetext {
   font-weight: 600;
   text-align: right;
   margin: 8px 0 -4px 2px;
-  padding: 0;
+  padding: 0 0 0 4px;
 }
 div.pageoverflow p.pageinput, div.pageoverflow div.pageinput {
   float: left;
   clear: left;
   margin: 8px 0 0 0;
-  padding: 0;
+  padding: 0 0 0 4px;
   min-width: 690px;
 }
 div.pageoverflow p.pageinput img, div.pageoverflow div.pageinput img {
@@ -697,11 +697,22 @@ div#nav-icons_all ul#nav-icons li.viewsite-icon a, div#nav-icons_all ul#nav-icon
   background: transparent url(themes/limpid/images/icons/extra/nav-icons.png) no-repeat 6px -4px;
   border-radius: 17px;
 }
+div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover,
+div#nav-icons_all ul#nav-icons li.logout-icon a:hover,
+div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover,
+div#nav-icons_all ul#nav-icons li.logout-icon a:hover {
+  margin: -1px;
+  background-color: #ff9900;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+div#nav-icons_all ul#nav-icons li.viewsite-icon a:active, div#nav-icons_all ul#nav-icons li.logout-icon a:active {
+  margin-top: 0px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
 div#nav-icons_all ul#nav-icons li.logout-icon a {
   background-position: -43px -5px;
-}
-div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover, div#nav-icons_all ul#nav-icons li.logout-icon a:hover {
-  background-color: #ff9900;
 }
 /* Nav Tools  */
 div.MainMenu {
@@ -888,13 +899,17 @@ input:focus {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="file"]:focus,
+input[type="checkbox"]:focus,
 textarea:focus,
 select:focus {
+  -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 5px #ff9900;
   outline: auto 5px -webkit-focus-ring-color;
   outline-offset: -1px;
-  outline-color: #ff9900;
+  outline-color: #ffad33;
   background: #fff;
-  -webkit-transition: background 0.5s;
+  transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -webkit-transition: background 0.5s ease-out;
 }
 input[type="text"], input[type="password"], input[type="file"] {
   font-family: "Helvetica Neue", "HelveticaNeue", helvetica, sans-serif;
@@ -931,19 +946,16 @@ input[type="submit"]:focus {
   color: #fff;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  background: #ff9900;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
-  background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
+  background: #ff8400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffc300), to(#ff8400));
+  background: -moz-linear-gradient(top, #ffc300 0%, #ff8400 100%);
 }
 input[type="button"]:active, input[type="submit"]:active {
   color: #fff;
   cursor: pointer;
-  background: #ff9900;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
-  background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
-  box-shadow: 0 1px 0 #ffffff, inset 0 1px 3px 3px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 1px 0 #ffffff, inset 0 1px 3px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 input.pagebutton, input.pagebuttonhover {
   cursor: pointer;
@@ -1188,7 +1200,7 @@ a:hover img {
 }
 #page_content {
   margin-bottom: 10px;
-  padding: 20px;
+  padding: 20px 20px 20px 16px;
   background: #dce2e5;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -1726,9 +1738,6 @@ body.login p.username, body.login p.password {
   margin: 17px 0 0 0;
   padding: 0 30px;
 }
-body.login p.username {
-  margin-top: 30px;
-}
 body.login p.username label, body.login p.password label {
   position: absolute;
   top: 9px;
@@ -1736,10 +1745,7 @@ body.login p.username label, body.login p.password label {
   text-indent: -999em;
   width: 24px;
   height: 24px;
-  background: transparent url(themes/limpid/images/icons/system/user.png) no-repeat;
-}
-body.login p.password label {
-  background: url(themes/limpid/images/icons/system/password.png);
+  background: transparent url(themes/limpid/images/icons/system/password.png) no-repeat;
 }
 body.login p.username input, body.login p.password input {
   font-size: 1.32em;
@@ -1752,6 +1758,15 @@ body.login p.username input, body.login p.password input {
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
+body.login p.username input body.login p.password input:focus, body.login p.password input body.login p.password input:focus {
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 5px #ff9900;
+}
+body.login p.username {
+  margin-top: 30px;
+}
+body.login p.username label {
+  background: url(themes/limpid/images/icons/system/user.png);
+}
 body.login p.buttons {
   text-align: right;
   padding: 20px 25px;
@@ -1761,8 +1776,14 @@ body.login p.buttons input {
   height: 32px;
   border-radius: 5px;
   border-color: #000;
-  box-shadow: 0 1px 0 #444;
-  -webkit-box-shadow: 0 1px 0 #444;
+  box-shadow: 0 1px 0 #444444;
+  -webkit-box-shadow: 0 1px 0 #444444;
+  -moz-box-shadow: 0 1px 0 #444444;
+}
+body.login p.buttons input:active {
+  box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
 }
 body.login p.forgot-pw {
   text-align: center;
@@ -1790,14 +1811,15 @@ body.login div#copy {
   width: 100%;
   padding: 0 0 10px 0;
 }
-div#copy a {
+body.login div#copy a {
   color: #000;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 800;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-div#copy a:hover {
-  color: #f90;
-  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.5);
-  -webkit-transition: color 0.5s;
+body.login div#copy a:hover {
+  color: rgba(0, 0, 0, 0.7);
+  transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -webkit-transition: color 0.5s ease-out;
 }

@@ -223,13 +223,13 @@
       float:left;
       font-weight:600;
       text-align:right;
-      margin:8px 0 -4px 2px; padding:0;
+      margin:8px 0 -4px 2px; padding:0 0 0 4px;
     }
     
     p.pageinput,
     div.pageinput {
       float:left; clear:left;
-      margin:8px 0 0 0; padding:0;
+      margin:8px 0 0 0; padding:0 0 0 4px;
       min-width:690px;
       
       img {
@@ -331,21 +331,28 @@
       	float:left;
       }
       
-      li.viewsite-icon a,
-      li.logout-icon a {
-      	display:block;
-      	height:34px;width:34px;
-      	background: transparent url(themes/limpid/images/icons/extra/nav-icons.png) no-repeat 6px -4px;
-      	border-radius:17px;
+      li.viewsite-icon,
+      li.logout-icon {
+      	a {
+        	display:block;
+        	height:34px;width:34px;
+        	background: transparent url(themes/limpid/images/icons/extra/nav-icons.png) no-repeat 6px -4px;
+        	border-radius:17px;
+        	
+        	&:hover,
+          &:hover {
+            margin:-1px;
+          	background-color:@maincolor;
+          	border:1px solid @black10;
+          }
+          &:active {
+            margin-top:0px;
+          	.box-shadow-inset(0, 1px, 3px, @black30);
+          }
+        }
       }
-      
       li.logout-icon a {
       	background-position:-43px -5px;
-      }
-      
-      li.viewsite-icon a:hover,
-      li.logout-icon a:hover {
-      	background-color:@maincolor;
       }
     }
   }
@@ -548,13 +555,15 @@
   input[type="text"]:focus,
   input[type="password"]:focus,
   input[type="file"]:focus,
+  input[type="checkbox"]:focus,
   textarea:focus,
   select:focus {
+    -moz-box-shadow:0 1px 0 #fff, inset 0 1px 2px @black30, 0 0 5px @maincolor;
     outline:auto 5px -webkit-focus-ring-color;
     outline-offset:-1px;
-    outline-color:@maincolor;
+    outline-color:lighten(@maincolor,10);
     background:#fff;
-    -webkit-transition:background 0.5s;
+    .transition(background, 0.5s);
   }
   input[type="text"], 
   input[type="password"],
@@ -589,14 +598,13 @@
   	color:#fff;
   	cursor: pointer;
   	border:1px solid @black30; 
-  	.bg-lingradient-y(#ffb400, @maincolor);
+  	.bg-lingradient-y(spin(@maincolor,10), spin(@maincolor,-5));
   }
   input[type="button"]:active,
   input[type="submit"]:active {
   	color:#fff;
   	cursor: pointer;
-  	.bg-lingradient-y(#ffb400, @maincolor);
-  	.box-shadow-addinset(0, 1px, 0, #fff, 0 1px, 3px);
+  	.box-shadow-addinset(0, 1px, 0, #fff, 0, 1px, 2px, @black50);
   }
   input.pagebutton,
   input.pagebuttonhover {
@@ -851,7 +859,7 @@
   }
 
   #page_content {
-  	margin-bottom:10px; padding:20px;
+  	margin-bottom:10px; padding:20px 20px 20px 16px;
   	background:#dce2e5;
   	border-bottom-right-radius:8px;
   	border-bottom-left-radius:8px;
@@ -1325,112 +1333,128 @@
   /* Login */
   body.login {
     .bg-lingradient-y(#e1effa, #a5bbcc);
-  }
-  body.login div.pagemcontainer {min-width:500px;}
-  body.login div.box {
-    color:#fff;
-    font-weight:500;
-    position:absolute; top:50%; left:50%; z-index:2;
-  	width:500px;
-  	height:240px;
-  	margin:-120px 0 0 -250px;
-  	background:#222;
-  	border: 1px solid #000;
-  	border-radius:0 0 8px 8px;
-  	.box-shadow(0, 15px, 70px, @black40);
-  }
-  body.login div.box a:focus,
-  body.login div.box a:hover {
-    color:#f90;
-  }
-  body.login h1 {
-    position:absolute; bottom:240px; left:0;
-    color:#fff;
-    font-size:2.12em;
-    font-weight:800;
-    text-align:center;
-    text-shadow:0 1px 5px #000;
-    width:460px;
-    margin:0 -1px; padding:20px;
-    .bg-lingradient-y(#444, #333);
-    border-top:1px solid #444;
-    border-left:1px solid #444;
-    border-right:1px solid #444;
-    border-radius:8px 8px 0 0;
-  	box-shadow:0 5px 140px @black60;
-  	-webkit-box-shadow:0 5px 140px @black60;
-  }
-  body.login p.username,
-  body.login p.password {
-    position:relative;
-    margin:17px 0 0 0; padding:0 30px;
-  }
-  body.login p.username {
-    margin-top:30px;
-  }
-  body.login p.username label,
-  body.login p.password label {
-    position:absolute; top:9px; left:38px;
-    text-indent:-999em;
-    width:24px; height:24px;
-    background:transparent url(themes/limpid/images/icons/system/user.png) no-repeat;
-  }
-  body.login p.password label { 
-    background:url(themes/limpid/images/icons/system/password.png);
-  }
-  body.login p.username input,
-  body.login p.password input {
-    font-size:1.32em;
-    width:390px;
-    margin:0; padding:11px 11px 11px 42px;
-    border-radius:4px;
-    border:1px solid @black80;
-    .box-shadow(0, 1px, 0, @white40);
-  }
-  body.login p.buttons {
-    text-align:right;
-    padding:20px 25px;
-  }
-  body.login p.buttons input {
-    font-size:1.32em;
-    height:32px;
-    border-radius:5px;
-    border-color:#000;
-    box-shadow:0 1px 0 #444;
-    -webkit-box-shadow:0 1px 0 #444;
-  }
-  body.login p.forgot-pw {
-    text-align:center;
-    font-weight:600;
-    padding:0 30px;
-    text-shadow:0 1px 0 #000;
-  }
-  body.login p.info {
-    font-size:1.12em;
-    line-height:130%;
-    text-align:justify;
-    margin:25px 31px 0px 31px;
-  }
-  body.login div#copy {
-    position:fixed; bottom:0; z-index:1;
-  	font-size: 1em;
-  	font-weight:200;
-  	color: #000;
-  	color:@black80;
-  	clear: both;
-  	text-align: center;
-  	text-shadow:0 1px 0 @white50;
-    width:100%;
-    padding:0 0 10px 0;
-  }
-  div#copy a {
-    color:#000;
-    color:@black80;
-    font-weight:800;
-  	text-shadow:0 1px 0 @white60;
-  }
-  div#copy a:hover {
-    color:#f90;
-  	text-shadow:0 1px 0px @black50;
-    -webkit-transition:color 0.5s;
+    
+    div.pagemcontainer {min-width:500px;}
+    div.box {
+      color:#fff;
+      font-weight:500;
+      position:absolute; top:50%; left:50%; z-index:2;
+    	width:500px;
+    	height:240px;
+    	margin:-120px 0 0 -250px;
+    	background:#222;
+    	border: 1px solid #000;
+    	border-radius:0 0 8px 8px;
+    	.box-shadow(0, 15px, 70px, @black40);
+    	
+    	a:focus,
+      a:hover {
+        color:#f90;
+      }
+    }
+    
+    h1 {
+      position:absolute; bottom:240px; left:0;
+      color:#fff;
+      font-size:2.12em;
+      font-weight:800;
+      text-align:center;
+      text-shadow:0 1px 5px #000;
+      width:460px;
+      margin:0 -1px; padding:20px;
+      .bg-lingradient-y(#444, #333);
+      border-top:1px solid #444;
+      border-left:1px solid #444;
+      border-right:1px solid #444;
+      border-radius:8px 8px 0 0;
+    	box-shadow:0 5px 140px @black60;
+    	-webkit-box-shadow:0 5px 140px @black60;
+    }
+    
+    p.username,
+    p.password {
+      position:relative;
+      margin:17px 0 0 0; padding:0 30px;
+
+      label {
+        position:absolute; top:9px; left:38px;
+        text-indent:-999em;
+        width:24px; height:24px;
+        background:transparent url(themes/limpid/images/icons/system/password.png) no-repeat;
+      }
+      input {
+        font-size:1.32em;
+        width:390px;
+        margin:0; padding:11px 11px 11px 42px;
+        border-radius:4px;
+        border:1px solid @black80;
+        .box-shadow(0, 1px, 0, @white40);
+        
+        body.login p.password input:focus {
+          -moz-box-shadow:0 1px 0 @white40, 0 0 5px @maincolor;
+        }
+      }
+    }
+    p.username {
+      margin-top:30px;
+      
+      label {
+      background:url(themes/limpid/images/icons/system/user.png);
+      }
+    }
+    p.buttons {
+      text-align:right;
+      padding:20px 25px;
+      
+      input {
+        font-size:1.32em;
+        height:32px;
+        border-radius:5px;
+        border-color:#000;
+        .box-shadow(0, 1px, 0, #444);
+        
+        &:active {
+          .box-shadow-addinset(0, 1px, 0, #444, 0, 7px, 7px, @black50);
+        }
+      }
+    }
+    
+    p.forgot-pw {
+      text-align:center;
+      font-weight:600;
+      padding:0 30px;
+      text-shadow:0 1px 0 #000;
+    }
+    
+    p.info {
+      font-size:1.12em;
+      line-height:130%;
+      text-align:justify;
+      margin:25px 31px 0px 31px;
+    }
+    
+    div#copy {
+      position:fixed; bottom:0; z-index:1;
+    	font-size: 1em;
+    	font-weight:200;
+    	color: #000;
+    	color:@black80;
+    	clear: both;
+    	text-align: center;
+    	text-shadow:0 1px 0 @white50;
+      width:100%;
+      padding:0 0 10px 0;
+      
+      a {
+        color:#000;
+        color:@black80;
+        font-weight:800;
+      	text-shadow:0 1px 0 @white60;
+      	
+      	&:hover {
+          color:@black70;
+          .transition(color, 0.5s);
+        }
+      }
+    }
   }

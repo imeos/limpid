@@ -144,6 +144,17 @@
   	background:-moz-linear-gradient(top, @x 0%, @y 100%);
   }
   
+  .bg-colorgradient-y {
+    background: -moz-linear-gradient(left, #000 0%, #0cf 30%, #0f0 50%, #ff0 70%, #f00 90%, #000 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000), color-stop(30%,#0cf), color-stop(50%,#0f0), color-stop(70%,#ff0), color-stop(90%,#f00), color-stop(100%,#000));
+  }
+  
+  .transition(@property:all, @time:0.5s, @type:ease-out) {
+    transition: @property @time @type;
+    -moz-transition: @property @time @type;
+    -webkit-transition: @property @time @type;
+  }
+  
     
 /*--------------------------------------------------
   5. Webkit Scrollbars
