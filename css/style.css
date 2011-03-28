@@ -447,10 +447,10 @@ header div.breadcrumbs {
   overflow: hidden;
   margin: 46px -1px 0 221px;
   padding: 3px 22px 5px 22px;
-  background: rgba(0, 0, 0, 0.5);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.5)));
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.7)));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 header div.breadcrumbs span.arrowr {
   padding: 0 10px;
@@ -584,7 +584,6 @@ div.pageoverflow {
   overflow: hidden;
   width: auto;
   padding: 8px 0 3px 0;
-  border-bottom: 1px dotted #cfdce5;
 }
 div.pageoverflow .pagetext {
   float: left;
