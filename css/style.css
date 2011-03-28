@@ -597,7 +597,6 @@ div.pageoverflow p.pageinput, div.pageoverflow div.pageinput {
   clear: left;
   margin: 8px 0 0 0;
   padding: 0 0 0 4px;
-  min-width: 690px;
 }
 div.pageoverflow p.pageinput img, div.pageoverflow div.pageinput img {
   vertical-align: middle;
