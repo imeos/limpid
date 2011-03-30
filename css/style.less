@@ -123,6 +123,7 @@
     }
     
     div.pagecontainer {
+      position:relative;
     	margin-left:220px; padding-bottom:60px;
     	background: transparent;
     }
@@ -933,12 +934,27 @@
   /* Error-Messages */
   div.pageerrorcontainer, 
   div.pageerrorinstalldir {
-  	margin:0 0 20px 220px;
-  	padding: 10px;
-  	color: #fff;
-  	width: auto;
-  	background: #e65036;
-  	font-weight: bold;
+	  color: #fff;
+	  font-weight: bold;
+	  text-shadow:0 -1px 0 @black30;
+  	margin:0 0 20px 0; padding:6px 10px 10px 10px;
+  	.bg-lingradient-y(#e47865, #e65036);
+    border:1px solid @black40;
+  	border-radius:3px;
+  	
+  	img {display:none;}
+  	
+  	div.pageerrorcontainer, 
+    div.pageerrorinstalldir {
+      padding:5px 20px 0 20px;
+      background:transparent;
+      border:none;
+      
+      img {
+        display:inline;
+        vertical-align:middle;
+      }
+    }
   	
   	li {
     	list-style:none;
@@ -1157,9 +1173,8 @@
     }
     
     a {
-    	color:#fff;
     	font-weight:bold;
-    	text-decoration:none;
+    	text-decoration:underline;
     }
     
     .NotificationsPriority1 {color:#fcd6d6;}

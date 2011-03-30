@@ -22,6 +22,7 @@ Clone 'limpid' (`git clone git://github.com/jquery/jquery.git`) to /admin/themes
 
 ### Browser Support
 
-- Currently only extensively tested with Safari 5.0.3
-- Known to work well with Firefox 4.0 too
-- Support for IE 7 & 8
+- Safari 5.0
+- Webkit Nightly builds (so derivates, like Chrome, etc. should be ok too)
+- Firefox 4.0 and (with some CSS-awesomeness missing) Firefox &gt; 3.5
+- Internet Explorer 7 & 8
