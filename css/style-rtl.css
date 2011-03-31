@@ -291,7 +291,7 @@ button {
 .aleft {
   text-align: left;
 }
-.clear {
+.clear, .clearb {
   clear: both;
 }
 .hidden {
@@ -320,9 +320,46 @@ a:link {
 /*--------------------------------------------------
   4. LESS Declarations/definitions
   -------------------------------------------------- */
+.bg-colorgradient-y {
+  background: -moz-linear-gradient(left, #000000 0%, #00ccff 30%, #00ff00 50%, #ffff00 70%, #ff0000 90%, #000000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000000), color-stop(30%, #00ccff), color-stop(50%, #00ff00), color-stop(70%, #ffff00), color-stop(90%, #ff0000), color-stop(100%, #000000));
+}
 /*--------------------------------------------------
   5. Webkit Scrollbars
-  -------------------------------------------------- 
+  --------------------------------------------------  */
+/* jQuery Scrollbars */
+div.scrollbarpaper-container {
+  position: absolute;
+  z-index: 1;
+  background: red;
+}
+div.scrollbarpaper-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  background: blue;
+}
+div.scrollbarpaper-drag {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: green;
+  border-radius: 4px;
+}
+div.scrollbarpaper-drag-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+div.scrollbarpaper-drag-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+/*
+  
+  
   ::-webkit-scrollbar {
       width:8px;
       height:8px;
@@ -381,49 +418,49 @@ div#container {
   height: 100%;
   width: 100%;
   min-height: 100%;
-  min-width: 1000px;
+  min-width: 980px;
 }
 header {
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
+  min-width: 960px;
   padding: 0;
+  background: #777777;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#777777));
+  background: -moz-linear-gradient(top, #eeeeee 0%, #777777 100%);
 }
 header span.title {
   position: absolute;
   top: 7px;
-  left: 12px;
+  left: 6px;
   z-index: 1;
   cursor: default;
   color: #eee;
   font-size: 1.69em;
   font-weight: 600;
   letter-spacing: -0.07em;
-  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
-  padding: 2px 12px;
-  background: #ff9900;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
-  background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.1)));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 2px 14px;
   border-radius: 20px;
-  box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4), inset 0px 1px 5px rgba(0, 0, 0, 0.3);
 }
 header span.title span.admin {
   font-weight: 400;
 }
 header span.user {
-  position: absolute;
-  top: 15px;
-  right: 120px;
-  z-index: 1;
+  float: right;
   cursor: default;
   color: #fff;
-  font-size: 1.06em;
   font-weight: 500;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
-  float: right;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+  margin: 14px 120px 0 0;
 }
 header span.user span.username {
   font-weight: 900;
@@ -431,11 +468,7 @@ header span.user span.username {
 header div.nav {
   position: relative;
   height: 45px;
-  min-width: 968px;
   margin: 0;
-  background: #888888;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#888888));
-  background: -moz-linear-gradient(top, #eeeeee 0%, #888888 100%);
   border-top: 1px solid #777;
   border-bottom: 1px solid #111;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
@@ -445,30 +478,31 @@ header div.nav {
 header div.breadcrumbs {
   clear: both;
   color: #ddd;
+  cursor: default;
   font-weight: 500;
   height: 16px;
   overflow: hidden;
   margin: 46px -1px 0 221px;
   padding: 3px 22px 5px 22px;
-  background: rgba(0, 0, 0, 0.5);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.5)));
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.6)));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 header div.breadcrumbs span.arrowr {
   padding: 0 10px;
 }
-div#content {
+div#contents {
   min-height: 100%;
   margin: 0;
   padding: 0 22px;
   background: #fff;
 }
-div#content div.spacer {
+div#contents div.spacer {
   height: 110px;
   width: 100%;
 }
-div#content div.nav {
+div#contents div.nav {
   overflow: auto;
   position: fixed;
   top: 47px;
@@ -484,7 +518,8 @@ div#content div.nav {
   -webkit-box-shadow: inset -5px 0 8px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: inset -5px 0 8px rgba(0, 0, 0, 0.9);
 }
-div#content div.pagecontainer {
+div#contents div.pagecontainer {
+  position: relative;
   margin-left: 220px;
   padding-bottom: 60px;
   background: transparent;
@@ -496,23 +531,23 @@ footer {
   z-index: 3;
   height: 27px;
   width: 100%;
+  min-width: 980px;
   padding: 0;
-  background: #777;
+  background: #555;
 }
 footer p {
-  color: #333;
+  color: #555;
   cursor: default;
   font-size: .95em;
   font-weight: 500;
   text-align: center;
-  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.6);
-  min-width: 926px;
-  margin: 1px 0 0 0;
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.8);
+  margin: 1px 0 0 0!important;
   padding: 4px 20px;
   border-top: 1px solid #eee;
   background: #777777;
-  background: -webkit-gradient(linear, left top, left bottom, from(#bbbbbb), to(#777777));
-  background: -moz-linear-gradient(top, #bbbbbb 0%, #777777 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#777777));
+  background: -moz-linear-gradient(top, #cccccc 0%, #777777 100%);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -542,6 +577,8 @@ h3 {
 }
 h4 {
   font-size: 1em;
+  text-transform: uppercase;
+  margin-top: 1em;
 }
 p {
   font-size: 1em;
@@ -569,7 +606,7 @@ div.pageheader {
   padding: 0;
 }
 div.pageheader img {
-  height: 34px;
+  height: 16px;
   vertical-align: bottom;
 }
 div.pageheader img .systemicon {
@@ -584,22 +621,23 @@ div.pageoverflow {
   clear: left;
   overflow: hidden;
   width: auto;
-  padding: 8px 0 0 0;
-  border-bottom: 1px dotted #cfdce5;
+  padding: 8px 0 3px 0;
 }
 div.pageoverflow .pagetext {
   float: left;
   font-weight: 600;
   text-align: right;
   margin: 8px 0 -4px 2px;
-  padding: 0;
+  padding: 0 0 0 4px;
 }
 div.pageoverflow p.pageinput, div.pageoverflow div.pageinput {
   float: left;
   clear: left;
   margin: 8px 0 0 0;
-  padding: 0;
-  min-width: 690px;
+  padding: 0 0 0 4px;
+}
+div.pageoverflow p.pageinput img, div.pageoverflow div.pageinput img {
+  vertical-align: middle;
 }
 div.pagetext b {
   clear: both;
@@ -648,12 +686,12 @@ ul#nav-main li a .module, ul#nav-main li a .first_module {
   font-style: italic;
 }
 ul#nav-main li a:hover {
-  color: #fff;
+  color: #fff!important;
   background: #ff9900;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
   background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
 }
-ul#nav-main li a .active {
+ul#nav-main li a.active {
   color: #ff9900;
 }
 ul#nav-main li ul {
@@ -696,11 +734,22 @@ div#nav-icons_all ul#nav-icons li.viewsite-icon a, div#nav-icons_all ul#nav-icon
   background: transparent url(themes/limpid/images/icons/extra/nav-icons.png) no-repeat 6px -4px;
   border-radius: 17px;
 }
+div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover,
+div#nav-icons_all ul#nav-icons li.logout-icon a:hover,
+div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover,
+div#nav-icons_all ul#nav-icons li.logout-icon a:hover {
+  margin: -1px;
+  background-color: #ff9900;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+div#nav-icons_all ul#nav-icons li.viewsite-icon a:active, div#nav-icons_all ul#nav-icons li.logout-icon a:active {
+  margin-top: 0px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
 div#nav-icons_all ul#nav-icons li.logout-icon a {
   background-position: -43px -5px;
-}
-div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover, div#nav-icons_all ul#nav-icons li.logout-icon a:hover {
-  background-color: #ff9900;
 }
 /* Nav Tools  */
 div.MainMenu {
@@ -801,7 +850,7 @@ a.itemsublink:hover, a.itemsublink:focus {
 }
 /* footerlinks */
 footer a:link, footer a:visited {
-  font-weight: normal;
+  font-weight: bold;
   color: #333;
 }
 footer a:hover, footer a:focus {
@@ -851,8 +900,7 @@ li p {
   6. Forms
   -------------------------------------------------- */
 form {
-  margin: 0px;
-  display: inline;
+  margin: 0 0 0 -4px;
 }
 legend {
   font-weight: bold;
@@ -887,13 +935,17 @@ input:focus {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="file"]:focus,
+input[type="checkbox"]:focus,
 textarea:focus,
 select:focus {
+  -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 5px #ff9900;
   outline: auto 5px -webkit-focus-ring-color;
   outline-offset: -1px;
-  outline-color: #ff9900;
+  outline-color: #ffad33;
   background: #fff;
-  -webkit-transition: background 0.5s;
+  transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -webkit-transition: background 0.5s ease-out;
 }
 input[type="text"], input[type="password"], input[type="file"] {
   font-family: "Helvetica Neue", "HelveticaNeue", helvetica, sans-serif;
@@ -915,13 +967,13 @@ input[type="button"], input[type="submit"] {
   background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#222222));
   background: -moz-linear-gradient(top, #555555 0%, #222222 100%);
   border: 1px solid #000;
-  border-top-color: #999;
+  border-top-color: #888;
   border-right-color: #444;
   border-left-color: #444;
-  border-radius: 13px;
-  box-shadow: 0 1px 0 #ffffff;
-  -webkit-box-shadow: 0 1px 0 #ffffff;
-  -moz-box-shadow: 0 1px 0 #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 input[type="button"]:hover,
 input[type="button"]:focus,
@@ -930,19 +982,16 @@ input[type="submit"]:focus {
   color: #fff;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  background: #ff9900;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
-  background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
+  background: #ff8400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffc300), to(#ff8400));
+  background: -moz-linear-gradient(top, #ffc300 0%, #ff8400 100%);
 }
 input[type="button"]:active, input[type="submit"]:active {
   color: #fff;
   cursor: pointer;
-  background: #ff9900;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
-  background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
-  box-shadow: 0 1px 0 #ffffff, inset 0 1px 3px 3px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 1px 0 #ffffff, inset 0 1px 3px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 input.pagebutton, input.pagebuttonhover {
   cursor: pointer;
@@ -952,6 +1001,7 @@ input.pagecheckbox {
   border: none;
 }
 textarea.pagebigtextarea, textarea.pagesmalltextarea, .pageinput textarea {
+  z-index: 20;
   font-family: Monaco,monospace;
   font-size: .95em;
   padding: 4px;
@@ -996,42 +1046,51 @@ table.pagetable {
   width: 100%;
   margin: 1em 0 0 0;
   border-spacing: 0px;
+  border-collapse: separate;
 }
-table.pagetable th {
+table.pagetable thead {
+  background: -moz-linear-gradient(left, #000000 0%, #00ccff 30%, #00ff00 50%, #ffff00 70%, #ff0000 90%, #000000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000000), color-stop(30%, #00ccff), color-stop(50%, #00ff00), color-stop(70%, #ffff00), color-stop(90%, #ff0000), color-stop(100%, #000000));
+}
+table.pagetable thead th {
   color: #fff;
   font-weight: bold;
   font-size: 1em;
   text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
   line-height: 40px;
   height: 40px;
-  padding: 0 8px;
+  padding: 0 4px;
   background: #222222;
-  background: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#222222));
-  background: -moz-linear-gradient(top, #444444 0%, #222222 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#222222));
+  background: -moz-linear-gradient(top, #555555 0%, #222222 100%);
 }
-table.pagetable th .active {
+table.pagetable thead th:first-child {
+  border-top-left-radius: 5px;
+}
+table.pagetable thead th:last-child {
+  border-top-right-radius: 5px;
+}
+table.pagetable thead th .active {
   color: #d9cfc5;
 }
-table.pagetable th .active a {
+table.pagetable thead th .active a {
   color: #C6D5D9;
   text-decoration: underline;
 }
-table.pagetable th .pagepos {
+table.pagetable thead th .pagepos {
   text-align: center;
 }
-table.pagetable th a:hover {
+table.pagetable thead th a:link, table.pagetable thead th a:visited {
   color: #fff;
+  text-decoration: none;
+}
+table.pagetable thead th a:focus, table.pagetable thead th a:hover {
   text-decoration: underline;
 }
-table.pagetable th input {
+table.pagetable thead th input {
   vertical-align: middle;
-}
-table.pagetable th:first-child {
-  border-top-left-radius: 3px;
-}
-table.pagetable th:last-child {
-  border-top-right-radius: 3px;
 }
 table.pagetable td {
   color: #000;
@@ -1039,7 +1098,7 @@ table.pagetable td {
   font-size: .95em;
   letter-spacing: -0.08em;
   line-height: 120%;
-  padding: 9px 8px;
+  padding: 9px 4px;
   vertical-align: middle;
 }
 table.pagetable a {
@@ -1082,13 +1141,13 @@ tr.row1 {
   background-color: #fff;
 }
 tr.row2 {
-  background-color: whiteSmoke;
+  background-color: #f1f1f1;
 }
 tr.row1hover {
-  background: #d8e0e5;
+  background: #f7edde;
 }
 tr.row2hover {
-  background: #d8e0e5;
+  background: #f7edde;
 }
 td.pageicon {
   background-color: #fff !important;
@@ -1180,7 +1239,7 @@ a:hover img {
 }
 #page_content {
   margin-bottom: 10px;
-  padding: 20px;
+  padding: 20px 20px 20px 16px;
   background: #dce2e5;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -1205,7 +1264,7 @@ div.navt_menu div#navt_display {
   position: absolute;
   bottom: 0;
   left: 0;
-  color: #222;
+  color: #333;
   font-weight: 500;
   text-align: left;
   text-shadow: 0 1px 0px rgba(255, 255, 255, 0.6);
@@ -1221,6 +1280,9 @@ div.navt_menu div#navt_display span.arrowt {
   padding: 2px 9px 0 15px;
   vertical-align: top;
   border-right: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
 }
 div.navt_menu div#navt_display.navt_show span.arrowt {
   cursor: n-resize;
@@ -1249,13 +1311,38 @@ div.shortcuts {
   display: none;
 }
 /* Error-Messages */
+div.pagecontainer div.pageerrorcontainer, div.pagecontainer div.pageerrorinstalldir {
+  margin-left: 0;
+}
 div.pageerrorcontainer, div.pageerrorinstalldir {
-  margin: 0 0 20px 220px;
-  padding: 10px;
   color: #fff;
-  width: auto;
-  background: #e65036;
   font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  margin: 0 0 20px 220px;
+  padding: 6px 10px 10px 10px;
+  background: #e65036;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e47865), to(#e65036));
+  background: -moz-linear-gradient(top, #e47865 0%, #e65036 100%);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+div.pageerrorcontainer img, div.pageerrorinstalldir img {
+  display: none;
+}
+div.pageerrorcontainer div.pageerrorcontainer,
+div.pageerrorinstalldir div.pageerrorcontainer,
+div.pageerrorcontainer div.pageerrorinstalldir,
+div.pageerrorinstalldir div.pageerrorinstalldir {
+  padding: 5px 20px 0 20px;
+  background: transparent;
+  border: none;
+}
+div.pageerrorcontainer div.pageerrorcontainer img,
+div.pageerrorinstalldir div.pageerrorcontainer img,
+div.pageerrorcontainer div.pageerrorinstalldir img,
+div.pageerrorinstalldir div.pageerrorinstalldir img {
+  display: inline;
+  vertical-align: middle;
 }
 div.pageerrorcontainer li, div.pageerrorinstalldir li {
   list-style: none;
@@ -1271,7 +1358,7 @@ div.pagemcontainer {
   z-index: 1000;
   text-align: center;
   width: 100%;
-  min-width: 1000px;
+  min-width: 960px;
 }
 div.pagemcontainer p {
   display: inline-block;
@@ -1283,14 +1370,15 @@ div.pagemcontainer p {
   line-height: 27px;
   margin: 0;
   padding: 4px 20px;
-  background: #4dde80;
-  background: -webkit-gradient(linear, left top, left bottom, from(#8eecaf), to(#4dde80));
-  background: -moz-linear-gradient(top, #8eecaf 0%, #4dde80 100%);
+  background: #43bf6e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#99ffbd), to(#43bf6e));
+  background: -moz-linear-gradient(top, #99ffbd 0%, #43bf6e 100%);
   border-radius: 0 0 3px 3px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.4);
-  -webkit-box-shadow: 0 2px 6px rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 0 2px 6px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 div.pagemcontainer p img {
   height: 16px;
@@ -1429,7 +1517,6 @@ span.fm-messages {
 /*h2, 3, 4, etc  inside*/
 div.pagecontainer .h-inside {
   float: left;
-  color: #f90;
   padding-top: 8px;
   padding-right: 1em;
   margin-bottom: 0.5em;
@@ -1474,22 +1561,17 @@ div.pagecontainer .h-inside {
   background: -moz-linear-gradient(top, #757575 0%, #656565 100%);
   border: 1px solid rgba(0, 0, 0, 0.6);
 }
-.full-Notifications a, .full-Notifications a:visited {
-  color: #999;
-  text-decoration: none;
+.full-Notifications a {
   font-weight: bold;
-}
-.full-Notifications a:hover, .full-Notifications a:active {
-  color: #999;
   text-decoration: underline;
 }
-.full-Notifications .NotificationsPriority1 {
-  color: #ffb4b4;
+.full-Notifications .NotificationsPriority1, .full-Notifications .NotificationsPriority1 a {
+  color: #ffb2b2;
 }
-.full-Notifications .NotificationsPriority2 {
+.full-Notifications .NotificationsPriority2, .full-Notifications .NotificationsPriority2 a {
   color: #e8e856;
 }
-.full-Notifications .NotificationsPriority3 {
+.full-Notifications .NotificationsPriority3, .full-Notifications .NotificationsPriority3 a {
   color: #86e856;
 }
 .notifications-show, .notifications-hide {
@@ -1531,13 +1613,14 @@ div#notifications-container {
   clear: both;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 6px 0;
   border-top: 1px dotted rgba(0, 0, 0, 0.5);
 }
 .full-Notifications ul#Notifications-area li {
-  list-style: none;
-  margin: 0;
-  padding: 8px 0 0 0;
+  list-style: circle;
+  list-style-position: outside;
+  margin: 0 0 0 12px;
+  padding: 8px 0 0 5px;
 }
 .full-Notifications ul#Notifications-area:after {
   content: ".";
@@ -1719,9 +1802,6 @@ body.login p.username, body.login p.password {
   margin: 17px 0 0 0;
   padding: 0 30px;
 }
-body.login p.username {
-  margin-top: 30px;
-}
 body.login p.username label, body.login p.password label {
   position: absolute;
   top: 9px;
@@ -1729,10 +1809,7 @@ body.login p.username label, body.login p.password label {
   text-indent: -999em;
   width: 24px;
   height: 24px;
-  background: transparent url(themes/limpid/images/icons/system/user.png) no-repeat;
-}
-body.login p.password label {
-  background: url(themes/limpid/images/icons/system/password.png);
+  background: transparent url(themes/limpid/images/icons/system/password.png) no-repeat;
 }
 body.login p.username input, body.login p.password input {
   font-size: 1.32em;
@@ -1740,9 +1817,19 @@ body.login p.username input, body.login p.password input {
   margin: 0;
   padding: 11px 11px 11px 42px;
   border-radius: 4px;
-  border: 1px solid #000;
-  box-shadow: 0 1px 0 #777;
-  -webkit-box-shadow: 0 1px 0 #777;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+body.login p.username input body.login p.password input:focus, body.login p.password input body.login p.password input:focus {
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 5px #ff9900;
+}
+body.login p.username {
+  margin-top: 30px;
+}
+body.login p.username label {
+  background: url(themes/limpid/images/icons/system/user.png);
 }
 body.login p.buttons {
   text-align: right;
@@ -1753,8 +1840,14 @@ body.login p.buttons input {
   height: 32px;
   border-radius: 5px;
   border-color: #000;
-  box-shadow: 0 1px 0 #444;
-  -webkit-box-shadow: 0 1px 0 #444;
+  box-shadow: 0 1px 0 #444444;
+  -webkit-box-shadow: 0 1px 0 #444444;
+  -moz-box-shadow: 0 1px 0 #444444;
+}
+body.login p.buttons input:active {
+  box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
 }
 body.login p.forgot-pw {
   text-align: center;
@@ -1782,14 +1875,15 @@ body.login div#copy {
   width: 100%;
   padding: 0 0 10px 0;
 }
-div#copy a {
+body.login div#copy a {
   color: #000;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 800;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-div#copy a:hover {
-  color: #f90;
-  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.5);
-  -webkit-transition: color 0.5s;
+body.login div#copy a:hover {
+  color: rgba(0, 0, 0, 0.7);
+  transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -webkit-transition: color 0.5s ease-out;
 }

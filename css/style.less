@@ -90,6 +90,7 @@
     div.breadcrumbs {
       clear:both;
       color:#ddd;
+      cursor:default;
       font-weight:500;
       height:16px;
       overflow:hidden;
@@ -767,10 +768,10 @@
   	background-color:#f1f1f1;
   }
   tr.row1hover {
-  	background:#d8e0e5;
+  	background:desaturate(lighten(@maincolor,42),40);
   }
   tr.row2hover {
-  	background:#d8e0e5;
+  	background:desaturate(lighten(@maincolor,42),40);
   }
   td.pageicon {
   	background-color:#fff !important;
@@ -932,12 +933,18 @@
     display:none;
   }
   /* Error-Messages */
+  div.pagecontainer {
+    div.pageerrorcontainer, 
+    div.pageerrorinstalldir {
+      margin-left:0;
+    }
+  }
   div.pageerrorcontainer, 
   div.pageerrorinstalldir {
 	  color: #fff;
 	  font-weight: bold;
 	  text-shadow:0 -1px 0 @black30;
-  	margin:0 0 20px 0; padding:6px 10px 10px 10px;
+  	margin:0 0 20px 220px; padding:6px 10px 10px 10px;
   	.bg-lingradient-y(#e47865, #e65036);
     border:1px solid @black40;
   	border-radius:3px;
@@ -1177,9 +1184,12 @@
     	text-decoration:underline;
     }
     
-    .NotificationsPriority1 {color:#fcd6d6;}
-    .NotificationsPriority2 {color:#e8e856;}
-    .NotificationsPriority3 {color:#86e856;}
+    .NotificationsPriority1,
+    .NotificationsPriority1 a {color:#ffb2b2;}
+    .NotificationsPriority2,
+    .NotificationsPriority2 a {color:#e8e856;}
+    .NotificationsPriority3,
+    .NotificationsPriority3 a {color:#86e856;}
   }
   
   .notifications-show,

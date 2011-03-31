@@ -478,6 +478,7 @@ header div.nav {
 header div.breadcrumbs {
   clear: both;
   color: #ddd;
+  cursor: default;
   font-weight: 500;
   height: 16px;
   overflow: hidden;
@@ -1143,10 +1144,10 @@ tr.row2 {
   background-color: #f1f1f1;
 }
 tr.row1hover {
-  background: #d8e0e5;
+  background: #f7edde;
 }
 tr.row2hover {
-  background: #d8e0e5;
+  background: #f7edde;
 }
 td.pageicon {
   background-color: #fff !important;
@@ -1310,11 +1311,14 @@ div.shortcuts {
   display: none;
 }
 /* Error-Messages */
+div.pagecontainer div.pageerrorcontainer, div.pagecontainer div.pageerrorinstalldir {
+  margin-left: 0;
+}
 div.pageerrorcontainer, div.pageerrorinstalldir {
   color: #fff;
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  margin: 0 0 20px 0;
+  margin: 0 0 20px 220px;
   padding: 6px 10px 10px 10px;
   background: #e65036;
   background: -webkit-gradient(linear, left top, left bottom, from(#e47865), to(#e65036));
@@ -1561,13 +1565,13 @@ div.pagecontainer .h-inside {
   font-weight: bold;
   text-decoration: underline;
 }
-.full-Notifications .NotificationsPriority1 {
-  color: #fcd6d6;
+.full-Notifications .NotificationsPriority1, .full-Notifications .NotificationsPriority1 a {
+  color: #ffb2b2;
 }
-.full-Notifications .NotificationsPriority2 {
+.full-Notifications .NotificationsPriority2, .full-Notifications .NotificationsPriority2 a {
   color: #e8e856;
 }
-.full-Notifications .NotificationsPriority3 {
+.full-Notifications .NotificationsPriority3, .full-Notifications .NotificationsPriority3 a {
   color: #86e856;
 }
 .notifications-show, .notifications-hide {
