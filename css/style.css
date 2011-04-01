@@ -1273,6 +1273,7 @@ div.navt_menu div#navt_display {
 }
 div.navt_menu div#navt_display span.arrowt {
   display: block;
+  cursor: default;
   font-size: 20px;
   -moz-font-size: 16px;
   height: 100%;
@@ -1283,12 +1284,6 @@ div.navt_menu div#navt_display span.arrowt {
   box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
   -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
-}
-div.navt_menu div#navt_display.navt_show span.arrowt {
-  cursor: n-resize;
-}
-div.navt_menu div#navt_display.navt_hide span.arrowt {
-  cursor: s-resize;
 }
 div.navt_menu div#navt_container {
   color: #fff;
@@ -1319,7 +1314,7 @@ div.pageerrorcontainer, div.pageerrorinstalldir {
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
   margin: 0 0 20px 220px;
-  padding: 6px 10px 10px 10px;
+  padding: 3px 10px 10px 10px;
   background: #e65036;
   background: -webkit-gradient(linear, left top, left bottom, from(#e47865), to(#e65036));
   background: -moz-linear-gradient(top, #e47865 0%, #e65036 100%);
@@ -1581,12 +1576,9 @@ div.pagecontainer .h-inside {
   width: 30px;
   height: 20px;
   margin: 0 5px;
-  cursor: s-resize;
+  cursor: default;
   margin: 0px;
   padding: 0px;
-}
-div.notifications-hide {
-  cursor: n-resize;
 }
 div.notifications-show:before {
   content: "▼";
