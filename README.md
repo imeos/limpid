@@ -7,7 +7,7 @@ Designed for maximum efficiency and user-friendliness when working with the back
 
 Created using modern webstandards and technologies for lightweight code and easy maintainability.
 
-![Sample Screenshot](http://stuff.imeos.com/limpid.png)
+![Sample Screenshot](http://stuff.imeos.com/persistent/limpid.png)
 Everything you see in the above screenshot, is pure CSS of course, except for the 7 + 2 Icons ;-)
 
 ## Installation
@@ -25,4 +25,4 @@ Clone 'limpid' (`git clone git://github.com/jquery/jquery.git`) to /admin/themes
 - Safari 5.0
 - Webkit Nightly builds (so derivates, like Chrome, etc. should be ok too)
 - Firefox 4.0 and (with some CSS-awesomeness missing) Firefox &gt; 3.5
-- Internet Explorer 7 & 8
+- Internet Explorer 7 and 8
