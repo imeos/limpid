@@ -101,6 +101,7 @@ class limpidTheme extends AdminTheme
 	function ThemeHeader(){
 	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.dimensions.js"></script>'."\n";
 	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.accordion.pack.js"></script>'."\n";
+	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.scrollbarpaper.js"></script>'."\n";
 		echo '<script type="text/javascript" src="themes/limpid/includes/standard.js"></script>'."\n";
 	}
 	
@@ -374,8 +375,16 @@ class limpidTheme extends AdminTheme
         echo ' rel="external"';
       }
     echo ">".$thisItem['title']."</a><br />\n";
-    if (isset($thisItem['description']) && strlen($thisItem['description']) > 0)
+    if (isset($thisItem['description']) && strlen($thisItem['description']) > 220) {
+      echo '<span class="description" title="'.$thisItem['description'].'">';
+      echo substr($thisItem['description'], 0, 220)." &hellip;";
+      echo '</span>';
+    }
+    elseif (isset($thisItem['description']) && strlen($thisItem['description']) > 0) {
+      echo '<span class="description">';
       echo $thisItem['description'];
+      echo '</span>';
+    }
     echo '</p>';
     echo "</div>";
     echo '</div>';      
