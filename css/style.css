@@ -759,7 +759,7 @@ div.MainMenu div.row {
 div.MainMenu div.itemmenucontainer {
   float: left;
   width: 25%;
-  min-height: 180px;
+  min-height: 200px;
   padding-bottom: 45px;
 }
 div.MainMenu div.itemmenucontainer h3 {
@@ -771,6 +771,13 @@ div.MainMenu div.itemmenucontainer h3 {
 }
 div.MainMenu div.itemmenucontainer h3 a {
   text-decoration: none;
+}
+p.itemicon {
+  text-align: center;
+  padding: 0 20px;
+}
+p.itemicon img {
+  max-height: 36px;
 }
 p.itemtext {
   text-align: center;
@@ -794,14 +801,6 @@ p.itemtext span.subitems {
 }
 p.itemtext span.seperator {
   display: none;
-}
-p.itemicon {
-  text-align: center;
-  height: 40px;
-  padding: 0 20px;
-}
-p.itemicon img {
-  max-height: 36px;
 }
 /*--------------------------------------------------
   4. Links

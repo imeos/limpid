@@ -10,13 +10,18 @@
 header div.nav {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#888888',GradientType=0 );
 }
+header span.user {
+  position:absolute; top:1px; right:10px; z-index:1;
+}
+header div.breadcrumbs {
+  display:none;
+}
+
 footer p {
   font-size:.89em;
   font-weight:bold;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbbbbb', endColorstr='#777777',GradientType=0 );
 }
-
-div.breadcrumbs {display:none;}
 
 
 ul#nav-main li a {

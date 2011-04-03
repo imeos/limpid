@@ -10,3 +10,12 @@
 div#nav-icons_all {
   top:-15px;
 }
+
+
+
+footer p {
+  font-size:.89em;
+  font-weight:bold;
+  height:50px;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbbbbb', endColorstr='#777',GradientType=0 );
+}
