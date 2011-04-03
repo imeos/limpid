@@ -140,7 +140,7 @@
       font-size:.95em;
       font-weight:500;
       text-align:center;
-      text-shadow:0 1px 0px @white80;
+      text-shadow:0 1px 0px @white60;
       margin:1px 0 0 0!important; padding:4px 20px;
       border-top:1px solid #eee;
       .bg-lingradient-y(#ccc, #777);
@@ -366,8 +366,8 @@
       
     div.itemmenucontainer {
       float:left;
-      width:25%; min-height:16em;
-      padding-bottom:40px;
+      width:25%; min-height:180px;
+      padding-bottom:45px;
 
       h3 {
         font-size:1.19em;
@@ -467,7 +467,7 @@
   }
   footer a:hover,
   footer a:focus {
-    color:#c57600;
+    color:#555;
   }
   /* Back to Menu */
   p.pageback {
@@ -899,10 +899,14 @@
         font-size:20px;
         -moz-font-size:16px;
         height:100%; width:20px;
-        padding:2px 9px 0 15px;
+        padding:2px 9px 0 18px;
         vertical-align:top;
         border-right:1px solid @black30;
         .box-shadow(1px, 0, 0, @white10);
+      }
+      
+      &:hover {
+        color:#555;
       }
     }
     div#navt_container {
@@ -912,6 +916,11 @@
       
       div#navt_bookmarks {
         font-weight:bold;
+      }
+      
+      a:hover,
+      a:focus {
+        color:@maincolor;
       }
     }
   }

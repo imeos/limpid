@@ -74,6 +74,7 @@
   	}
   }
 
+
 function change(id, newClass, oldClass) {
 	identity=document.getElementById(id);
 	if (identity.className == oldClass) {

@@ -101,7 +101,6 @@ class limpidTheme extends AdminTheme
 	function ThemeHeader(){
 	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.dimensions.js"></script>'."\n";
 	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.accordion.pack.js"></script>'."\n";
-	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.scrollbarpaper.js"></script>'."\n";
 		echo '<script type="text/javascript" src="themes/limpid/includes/standard.js"></script>'."\n";
 	}
 	
@@ -375,9 +374,9 @@ class limpidTheme extends AdminTheme
         echo ' rel="external"';
       }
     echo ">".$thisItem['title']."</a><br />\n";
-    if (isset($thisItem['description']) && strlen($thisItem['description']) > 220) {
+    if (isset($thisItem['description']) && strlen($thisItem['description']) > 120) {
       echo '<span class="description" title="'.$thisItem['description'].'">';
-      echo substr($thisItem['description'], 0, 220)." &hellip;";
+      echo substr($thisItem['description'], 0, 120)." &hellip;";
       echo '</span>';
     }
     elseif (isset($thisItem['description']) && strlen($thisItem['description']) > 0) {
@@ -576,7 +575,7 @@ class limpidTheme extends AdminTheme
       //FOOTER
       echo '<footer>';
         echo '<p>';
-          echo '<a rel="external" href="http://www.cmsmadesimple.org">CMS Made Simple</a> '.$CMS_VERSION.' "' . $CMS_VERSION_NAME . '" is free software released under the General Public Licence.';
+          echo '<a rel="external" href="http://www.cmsmadesimple.org" title="CMS Made Simple Website">CMS Made Simple</a> '.$CMS_VERSION.' "' . $CMS_VERSION_NAME;
           echo '</p>';
       echo '</footer>';   
     echo '</div> <!-- end of #container -->';
