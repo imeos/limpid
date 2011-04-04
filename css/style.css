@@ -759,7 +759,7 @@ div.MainMenu div.row {
 div.MainMenu div.itemmenucontainer {
   float: left;
   width: 25%;
-  min-height: 200px;
+  min-height: 160px;
   padding-bottom: 45px;
 }
 div.MainMenu div.itemmenucontainer h3 {

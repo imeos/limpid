@@ -30,6 +30,11 @@ ul#nav-main li a {
 }
 
 
+div.MainMenu div.itemmenucontainer {
+  min-height:200px;
+}
+
+
 #page_tabs div {
   display:block;
   float:left;
