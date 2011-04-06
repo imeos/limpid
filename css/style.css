@@ -1356,6 +1356,7 @@ div.pagemcontainer {
   text-align: center;
   width: 100%;
   min-width: 960px;
+  height: 1px;
 }
 div.pagemcontainer p {
   display: inline-block;
