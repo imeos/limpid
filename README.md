@@ -1,5 +1,5 @@
 # Limpid: Administration Theme for CMS Made Simple
-([IMEOS Blog about this Theme](http://www.imeos.com/blog/limpid-admin-theme-for-cms-made-simple/)) | ([www.cmsmadesimple.org](http://www.cmsmadesimple.org/))
+([IMEOS -- blog entry about this Theme](http://www.imeos.com/blog/limpid-admin-theme-for-cms-made-simple/)) | ([www.cmsmadesimple.org](http://www.cmsmadesimple.org/))
 
 
 ## Info
