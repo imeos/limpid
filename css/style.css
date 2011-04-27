@@ -327,81 +327,47 @@ a:link {
 /*--------------------------------------------------
   5. Webkit Scrollbars
   --------------------------------------------------  */
-/* jQuery Scrollbars */
-div.scrollbarpaper-container {
-  position: absolute;
-  z-index: 1;
-  background: red;
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-div.scrollbarpaper-track {
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  background: blue;
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {
+  display: block;
+  height: 10px;
+  width: 0;
 }
-div.scrollbarpaper-drag {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  background: green;
-  border-radius: 4px;
+body::-webkit-scrollbar-button:start:decrement {
+  height: 85px;
 }
-div.scrollbarpaper-drag-top {
-  position: absolute;
-  top: 0;
-  width: 100%;
+body::-webkit-scrollbar-button:end:increment {
+  height: 25px;
 }
-div.scrollbarpaper-drag-bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+div#content div.nav::-webkit-scrollbar-button:start:decrement {
+  height: 60px;
 }
-/*
-  
-  
-  ::-webkit-scrollbar {
-      width:8px;
-      height:8px;
-  }
-  ::-webkit-scrollbar-button:start:decrement,
-  ::-webkit-scrollbar-button:end:increment {
-      display: block;
-      height:10px;
-      width:0;
-  }
-  body::-webkit-scrollbar-button:start:decrement {
-      height:85px;
-  }
-  body::-webkit-scrollbar-button:end:increment {
-      height:25px;
-  }
-  div#content div.nav::-webkit-scrollbar-button:start:decrement {
-      height:60px;
-  }
-  div#content div.nav::-webkit-scrollbar-button:end:increment {
-      height:40px;
-  }
-  div#content div.nav::-webkit-scrollbar-track-piece {
-      background-color:transparent;
-  }
-  ::-webkit-scrollbar-button:vertical:increment {
-      background-color:transparent;
-  }
-  ::-webkit-scrollbar-track-piece {
-      background-color:#dce2e5;
-      -webkit-border-radius:4px;
-  }
-  ::-webkit-scrollbar-thumb:vertical {
-      height:80px;
-      background:#777;  
-      -webkit-border-radius:4px;
-  }
-  ::-webkit-scrollbar-thumb:horizontal {
-      width:50px;
-      background:#777 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999), to(#555)); 
-      -webkit-border-radius:4px;
-  }*/
+div#content div.nav::-webkit-scrollbar-button:end:increment {
+  height: 40px;
+}
+div#content div.nav::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+::-webkit-scrollbar-button:vertical:increment {
+  background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #dce2e5;
+  -webkit-border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 80px;
+  background: #777;
+  -webkit-border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+  background: #777777 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#555555));
+  -webkit-border-radius: 4px;
+}
 /*"@media screen and (-webkit-min-device-pixel-ratio:0) {html {overflow:hidden;} body {overflow:auto;}} "*/
 /*--------------------------------------------------
   1. Layout
@@ -431,6 +397,7 @@ header {
   background: #777777;
   background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#777777));
   background: -moz-linear-gradient(top, #eeeeee 0%, #777777 100%);
+  background: linear-gradient(top, #eeeeee 0%, #777777 100%);
 }
 header span.title {
   position: absolute;
@@ -438,17 +405,20 @@ header span.title {
   left: 6px;
   z-index: 1;
   color: #eee;
-  font-size: 1.69em;
+  font-size: 1.75em;
   font-weight: 600;
   letter-spacing: -0.07em;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   background: rgba(0, 0, 0, 0.1);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.1)));
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
   -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
   padding: 2px 14px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
   border-radius: 20px;
 }
 header span.title span.admin {
@@ -470,9 +440,9 @@ header div.nav {
   margin: 0;
   border-top: 1px solid #777;
   border-bottom: 1px solid #111;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 header div.breadcrumbs {
   clear: both;
@@ -485,6 +455,7 @@ header div.breadcrumbs {
   background: rgba(0, 0, 0, 0.6);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.6)));
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 header div.breadcrumbs span.arrowr {
@@ -511,10 +482,11 @@ div#contents div.nav {
   background: #111111;
   background: -webkit-gradient(linear, left top, left bottom, from(#252525), to(#111111));
   background: -moz-linear-gradient(top, #252525 0%, #111111 100%);
+  background: linear-gradient(top, #252525 0%, #111111 100%);
   border-right: 1px solid #333;
-  box-shadow: inset -5px 0 8px rgba(0, 0, 0, 0.9);
-  -webkit-box-shadow: inset -5px 0 8px rgba(0, 0, 0, 0.9);
-  -moz-box-shadow: inset -5px 0 8px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: inset -8px -8px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset -8px -8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: inset -8px -8px 20px rgba(0, 0, 0, 0.5);
 }
 div#contents div.pagecontainer {
   position: relative;
@@ -545,18 +517,19 @@ footer p {
   background: #777777;
   background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#777777));
   background: -moz-linear-gradient(top, #cccccc 0%, #777777 100%);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(top, #cccccc 0%, #777777 100%);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 div#DebugFooter {
   margin: 400px 16px 0 16px;
   padding: 25px 22px 25px 244px;
   border-top: 20px solid red;
   background: #fff;
-  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
 }
 /*--------------------------------------------------
   2. Typography
@@ -687,6 +660,7 @@ ul#nav-main li a:hover {
   background: #ff9900;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff9900));
   background: -moz-linear-gradient(top, #ffb400 0%, #ff9900 100%);
+  background: linear-gradient(top, #ffb400 0%, #ff9900 100%);
 }
 ul#nav-main li a.active {
   color: #ff9900;
@@ -729,6 +703,8 @@ div#nav-icons_all ul#nav-icons li.viewsite-icon a, div#nav-icons_all ul#nav-icon
   height: 34px;
   width: 34px;
   background: transparent url(themes/limpid/images/icons/extra/nav-icons.png) no-repeat 6px -4px;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
   border-radius: 17px;
 }
 div#nav-icons_all ul#nav-icons li.viewsite-icon a:hover,
@@ -741,9 +717,9 @@ div#nav-icons_all ul#nav-icons li.logout-icon a:hover {
 }
 div#nav-icons_all ul#nav-icons li.viewsite-icon a:active, div#nav-icons_all ul#nav-icons li.logout-icon a:active {
   margin-top: 0px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 div#nav-icons_all ul#nav-icons li.logout-icon a {
   background-position: -43px -5px;
@@ -834,6 +810,9 @@ a.itemsublink:link, a.itemsublink:visited {
   background: #999999;
   background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#999999));
   background: -moz-linear-gradient(top, #dddddd 0%, #999999 100%);
+  background: linear-gradient(top, #dddddd 0%, #999999 100%);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-top: none;
@@ -843,6 +822,7 @@ a.itemsublink:hover, a.itemsublink:focus {
   background: #ff9900;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffc266), to(#ff9900));
   background: -moz-linear-gradient(top, #ffc266 0%, #ff9900 100%);
+  background: linear-gradient(top, #ffc266 0%, #ff9900 100%);
 }
 /* footerlinks */
 footer a:link, footer a:visited {
@@ -919,11 +899,13 @@ input, textarea {
   margin-right: 5px;
   border: 1px solid #777;
   border-top-color: #555;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   background: #e9eef2;
-  box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 input:focus {
   outline: none;
@@ -939,9 +921,9 @@ select:focus {
   outline-offset: -1px;
   outline-color: #ffad33;
   background: #fff;
-  transition: background 0.5s ease-out;
   -moz-transition: background 0.5s ease-out;
   -webkit-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
 }
 input[type="text"], input[type="password"], input[type="file"] {
   font-family: "Helvetica Neue", "HelveticaNeue", helvetica, sans-serif;
@@ -962,14 +944,17 @@ input[type="button"], input[type="submit"] {
   background: #222222;
   background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#222222));
   background: -moz-linear-gradient(top, #555555 0%, #222222 100%);
+  background: linear-gradient(top, #555555 0%, #222222 100%);
   border: 1px solid #000;
   border-top-color: #888;
   border-right-color: #444;
   border-left-color: #444;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   border-radius: 15px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 input[type="button"]:hover,
 input[type="button"]:focus,
@@ -981,13 +966,14 @@ input[type="submit"]:focus {
   background: #ff8400;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffc300), to(#ff8400));
   background: -moz-linear-gradient(top, #ffc300 0%, #ff8400 100%);
+  background: linear-gradient(top, #ffc300 0%, #ff8400 100%);
 }
 input[type="button"]:active, input[type="submit"]:active {
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 input.pagebutton, input.pagebuttonhover {
   cursor: pointer;
@@ -1022,10 +1008,12 @@ select {
   font-weight: 400;
   padding: 2px;
   background: #e9eef2;
-  box-shadow: 0 1px 0 #ffffff;
   -webkit-box-shadow: 0 1px 0 #ffffff;
   -moz-box-shadow: 0 1px 0 #ffffff;
+  box-shadow: 0 1px 0 #ffffff;
   border: 1px solid #777;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 select:focus {
@@ -1061,6 +1049,7 @@ table.pagetable thead th {
   background: #222222;
   background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#222222));
   background: -moz-linear-gradient(top, #555555 0%, #222222 100%);
+  background: linear-gradient(top, #555555 0%, #222222 100%);
 }
 table.pagetable thead th:first-child {
   border-top-left-radius: 5px;
@@ -1097,7 +1086,7 @@ table.pagetable td {
   padding: 9px 4px;
   vertical-align: middle;
 }
-table.pagetable a {
+table.pagetable a:link, table.pagetable a:visited {
   color: #000;
   text-decoration: underline;
 }
@@ -1209,11 +1198,12 @@ a:hover img {
   background: #c4c9cc;
   background: -webkit-gradient(linear, left top, left bottom, from(#dce1e5), to(#c4c9cc));
   background: -moz-linear-gradient(top, #dce1e5 0%, #c4c9cc 100%);
+  background: linear-gradient(top, #dce1e5 0%, #c4c9cc 100%);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  box-shadow: inset 0 -8px 25px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 -8px 25px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 -8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -8px 25px rgba(0, 0, 0, 0.2);
 }
 #page_tabs div img {
   /*if have icons in tabs fixed to height:14px;*/
@@ -1229,9 +1219,10 @@ a:hover img {
   background: #dce2e5;
   background: -webkit-gradient(linear, left top, left bottom, from(#f0f5fa), to(#dce2e5));
   background: -moz-linear-gradient(top, #f0f5fa 0%, #dce2e5 100%);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(top, #f0f5fa 0%, #dce2e5 100%);
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 #page_content {
   margin-bottom: 10px;
@@ -1277,9 +1268,9 @@ div.navt_menu div#navt_display span.arrowt {
   padding: 2px 9px 0 18px;
   vertical-align: top;
   border-right: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
   -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
 }
 div.navt_menu div#navt_display:hover {
   color: #555;
@@ -1291,6 +1282,7 @@ div.navt_menu div#navt_container {
   background: #111111;
   background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#111111));
   background: -moz-linear-gradient(top, #000000 0%, #111111 100%);
+  background: linear-gradient(top, #000000 0%, #111111 100%);
 }
 div.navt_menu div#navt_container div#navt_bookmarks {
   font-weight: bold;
@@ -1320,7 +1312,10 @@ div.pageerrorcontainer, div.pageerrorinstalldir {
   background: #e65036;
   background: -webkit-gradient(linear, left top, left bottom, from(#e47865), to(#e65036));
   background: -moz-linear-gradient(top, #e47865 0%, #e65036 100%);
+  background: linear-gradient(top, #e47865 0%, #e65036 100%);
   border: 1px solid rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 div.pageerrorcontainer img, div.pageerrorinstalldir img {
@@ -1371,12 +1366,13 @@ div.pagemcontainer p {
   background: #43bf6e;
   background: -webkit-gradient(linear, left top, left bottom, from(#99ffbd), to(#43bf6e));
   background: -moz-linear-gradient(top, #99ffbd 0%, #43bf6e 100%);
+  background: linear-gradient(top, #99ffbd 0%, #43bf6e 100%);
   border-radius: 0 0 3px 3px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 div.pagemcontainer p img {
   height: 16px;
@@ -1388,12 +1384,13 @@ div.pagemcontainer p.pageerror {
   background: #fc6969;
   background: -webkit-gradient(linear, left top, left bottom, from(#fec4c4), to(#fc6969));
   background: -moz-linear-gradient(top, #fec4c4 0%, #fc6969 100%);
+  background: linear-gradient(top, #fec4c4 0%, #fc6969 100%);
 }
 div.pagemcontainer a {
   color: #fff;
 }
 div.pageoverflow a, div.pagecontainer a {
-  color: #343434;
+  color: #ff9900;
 }
 div.pageoverflow img {
   border: 0px;
@@ -1550,13 +1547,17 @@ div.pagecontainer .h-inside {
   background: #555555;
   background: -webkit-gradient(linear, left top, left bottom, from(#777777), to(#555555));
   background: -moz-linear-gradient(top, #777777 0%, #555555 100%);
+  background: linear-gradient(top, #777777 0%, #555555 100%);
   border: 1px solid rgba(0, 0, 0, 0.6);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 .full-Notifications:hover {
   background: #656565;
   background: -webkit-gradient(linear, left top, left bottom, from(#757575), to(#656565));
   background: -moz-linear-gradient(top, #757575 0%, #656565 100%);
+  background: linear-gradient(top, #757575 0%, #656565 100%);
   border: 1px solid rgba(0, 0, 0, 0.6);
 }
 .full-Notifications a {
@@ -1744,8 +1745,9 @@ td.block img {
 /* Login */
 body.login {
   background: #a5bbcc;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e1effa), to(#a5bbcc));
-  background: -moz-linear-gradient(top, #e1effa 0%, #a5bbcc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6f2fb), to(#a5bbcc));
+  background: -moz-linear-gradient(top, #e6f2fb 0%, #a5bbcc 100%);
+  background: linear-gradient(top, #e6f2fb 0%, #a5bbcc 100%);
 }
 body.login div.pagemcontainer {
   min-width: 500px;
@@ -1763,9 +1765,9 @@ body.login div.box {
   background: #222;
   border: 1px solid #000;
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 15px 70px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 15px 70px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 15px 70px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 15px 70px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 15px 70px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 70px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.5);
 }
 body.login div.box a:focus, body.login div.box a:hover {
   color: #f90;
@@ -1778,19 +1780,21 @@ body.login h1 {
   font-size: 2.12em;
   font-weight: 800;
   text-align: center;
-  text-shadow: 0 1px 5px #000;
-  width: 460px;
+  text-shadow: 0 1px 5px #222;
+  width: 462px;
   margin: 0 -1px;
   padding: 20px;
   background: #333333;
-  background: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#333333));
-  background: -moz-linear-gradient(top, #444444 0%, #333333 100%);
-  border-top: 1px solid #444;
-  border-left: 1px solid #444;
-  border-right: 1px solid #444;
+  background: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#333333));
+  background: -moz-linear-gradient(top, #666666 0%, #333333 100%);
+  background: linear-gradient(top, #666666 0%, #333333 100%);
+  border-top: 1px solid #999;
+  -webkit-border-radius: 8px 8px 0 0;
+  -moz-border-radius: 8px 8px 0 0;
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 5px 140px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 0 5px 140px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 5px 70px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 5px 70px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 70px rgba(0, 0, 0, 0.3);
 }
 body.login p.username, body.login p.password {
   position: relative;
@@ -1811,11 +1815,13 @@ body.login p.username input, body.login p.password input {
   width: 390px;
   margin: 0;
   padding: 11px 11px 11px 42px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 body.login p.username input body.login p.password input:focus, body.login p.password input body.login p.password input:focus {
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 5px #ff9900;
@@ -1833,16 +1839,18 @@ body.login p.buttons {
 body.login p.buttons input {
   font-size: 1.32em;
   height: 32px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
   border-color: #000;
-  box-shadow: 0 1px 0 #444444;
   -webkit-box-shadow: 0 1px 0 #444444;
   -moz-box-shadow: 0 1px 0 #444444;
+  box-shadow: 0 1px 0 #444444;
 }
 body.login p.buttons input:active {
-  box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 0 #444444, inset 0 7px 7px rgba(0, 0, 0, 0.5);
 }
 body.login p.forgot-pw {
   text-align: center;
@@ -1878,7 +1886,7 @@ body.login div#copy a {
 }
 body.login div#copy a:hover {
   color: rgba(0, 0, 0, 0.7);
-  transition: color 0.5s ease-out;
   -moz-transition: color 0.5s ease-out;
   -webkit-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
 }

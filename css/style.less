@@ -51,14 +51,14 @@
     span.title {
       position:absolute; top:7px; left:6px; z-index:1;
       color:#eee;
-      font-size:1.69em;
+      font-size:1.75em;
       font-weight:600;
       letter-spacing:-0.07em;
       text-shadow:0 1px 3px @black50;
       .bg-lingradient-y(@black70, @black10);
       .box-shadow-inset(0, 0, 10px, @black30);
       padding:2px 14px;
-      border-radius:20px;
+      .border-radius(20px);
       
       span.admin {
         font-weight:400;
@@ -118,7 +118,7 @@
       height:100%;
       .bg-lingradient-y(#252525, #111);
       border-right:1px solid #333;
-      .box-shadow-inset(-5px, 0, 8px, @black90);
+      .box-shadow-inset(-8px, -8px, 20px, @black50);
     }
     
     div.pagecontainer {
@@ -336,7 +336,7 @@
         	display:block;
         	height:34px;width:34px;
         	background: transparent url(themes/limpid/images/icons/extra/nav-icons.png) no-repeat 6px -4px;
-        	border-radius:17px;
+        	.border-radius(17px);
         	
         	&:hover,
           &:hover {
@@ -450,7 +450,7 @@
   	text-shadow:0 -1px 0 @black30;
   	margin:1px 0; padding:2px 7px;
   	.bg-lingradient-y(#ddd, #999);
-  	border-radius:15px;
+  	.border-radius(15px);
   	border:1px solid @black10;
   	border-top:none;
   }
@@ -545,7 +545,7 @@
   	margin-right:5px;
   	border:1px solid #777;
   	border-top-color:#555;
-    border-radius:3px;
+    .border-radius(3px);
   	background:#e9eef2;
   	.box-shadow-addinset(0, 1px, 0, #fff, 0, 1px, 2px, @black30);
   } 
@@ -586,7 +586,7 @@
     border-top-color:#888;
     border-right-color:#444;
     border-left-color:#444;
-    border-radius:15px;
+    .border-radius(15px);
     .box-shadow(0, 1px, 0, @white90);
   }
   input[type="button"]:hover,
@@ -642,7 +642,7 @@
   	background:#e9eef2;
   	.box-shadow(0, 1px, 0, #fff);
   	border:1px solid #777;
-    border-radius:3px;
+    .border-radius(3px);
     
   }
   select:focus {
@@ -721,7 +721,8 @@
     	vertical-align:middle;
     }
     
-    a {
+    a:link,
+    a:visited {
     	color:#000;
     	text-decoration:underline;
     }
@@ -948,7 +949,7 @@
   	margin:0 0 20px 220px; padding:3px 10px 10px 10px;
   	.bg-lingradient-y(#e47865, #e65036);
     border:1px solid @black40;
-  	border-radius:3px;
+  	.border-radius(3px);
   	
   	img {display:none;}
   	
@@ -1009,7 +1010,7 @@
     }
   }
   div.pageoverflow a, div.pagecontainer a {
-  	color: #343434;
+  	color:@maincolor;
   }
   div.pageoverflow img {
   	border: 0px;
@@ -1173,7 +1174,7 @@
   	padding:10px;
   	.bg-lingradient-y(#777, #555);
     border:1px solid @black60;
-  	border-radius:3px;
+  	.border-radius(3px);
   	
   	&:hover {
   	  .bg-lingradient-y(#757575, #656565);
@@ -1362,7 +1363,7 @@
   -------------------------------------------------- */
   /* Login */
   body.login {
-    .bg-lingradient-y(#e1effa, #a5bbcc);
+    .bg-lingradient-y(#e6f2fb, #a5bbcc);
     
     div.pagemcontainer {min-width:500px;}
     div.box {
@@ -1375,7 +1376,7 @@
     	background:#222;
     	border: 1px solid #000;
     	border-radius:0 0 8px 8px;
-    	.box-shadow(0, 15px, 70px, @black40);
+    	.box-shadow2(0, 15px, 70px, @black30, 0, 0, 1px, @black50);
     	
     	a:focus,
       a:hover {
@@ -1389,16 +1390,13 @@
       font-size:2.12em;
       font-weight:800;
       text-align:center;
-      text-shadow:0 1px 5px #000;
-      width:460px;
+      text-shadow:0 1px 5px #222;
+      width:462px;
       margin:0 -1px; padding:20px;
-      .bg-lingradient-y(#444, #333);
-      border-top:1px solid #444;
-      border-left:1px solid #444;
-      border-right:1px solid #444;
-      border-radius:8px 8px 0 0;
-    	box-shadow:0 5px 140px @black60;
-    	-webkit-box-shadow:0 5px 140px @black60;
+      .bg-lingradient-y(#666, #333);
+      border-top:1px solid #999;
+      .border-radius(8px 8px 0 0);
+      .box-shadow(0, 5px, 70px, @black30);
     }
     
     p.username,
@@ -1416,9 +1414,9 @@
         font-size:1.32em;
         width:390px;
         margin:0; padding:11px 11px 11px 42px;
-        border-radius:4px;
-        border:1px solid @black80;
-        .box-shadow(0, 1px, 0, @white40);
+        .border-radius(4px);
+        border:1px solid #000;
+        .box-shadow(0, 1px, 0, @white20);
         
         body.login p.password input:focus {
           -moz-box-shadow:0 1px 0 @white40, 0 0 5px @maincolor;
@@ -1439,7 +1437,7 @@
       input {
         font-size:1.32em;
         height:32px;
-        border-radius:5px;
+        .border-radius(5px);
         border-color:#000;
         .box-shadow(0, 1px, 0, #444);
         
