@@ -161,6 +161,16 @@
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000), color-stop(30%,#0cf), color-stop(50%,#0f0), color-stop(70%,#ff0), color-stop(90%,#f00), color-stop(100%,#000));
   }
   
+  .clearfix() {
+    &:after {
+      content:".";
+      display:block; 
+      height:0;
+      clear:both;
+      visibility:hidden;
+    }
+  }
+  
   .transition(@property:all, @time:0.5s, @type:ease-out) {
     -moz-transition: @property @time @type;
     -webkit-transition: @property @time @type;
