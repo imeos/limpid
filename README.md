@@ -4,6 +4,8 @@
 
 ## Info
 
+** Please see our blog (link above) for for info and to report bugs, etc.! **
+
 Designed for maximum efficiency and user-friendliness when working with the backend of the Content-Management-System Made Simple.
 
 Created using modern webstandards and technologies for lightweight code and easy maintainability.
@@ -19,11 +21,12 @@ Clone 'limpid' (`git clone git://github.com/jquery/jquery.git`) to /admin/themes
 
 ### CMS Made Simple
 
-- Currently only extensively tested with CMS-MS >= 1.9.1
+- Currently only extensively tested with CMS-MS ≥ 1.9.1
 
 ### Browser Support
 
-- Safari 5.0
-- Webkit Nightly builds (so derivates, like Chrome, etc. should be ok too)
-- Firefox 4.0 and (with some CSS-awesomeness missing) Firefox &gt; 3.5
-- Internet Explorer 7 and 8
+- Safari ≥ 5
+- Chrome ≥ 11
+- Firefox ≥ 4.0 and (with some CSS-awesomeness missing) Firefox ≥ 3.5
+- Internet Explorer ≥ 7
+
