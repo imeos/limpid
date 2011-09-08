@@ -4,7 +4,7 @@
 
 ## Info
 
-**Please see our blog (link above) for for info and to report bugs, etc.!**
+**Please see our blog (link above) for more info and to report bugs, etc.!**
 
 Designed for maximum efficiency and user-friendliness when working with the backend of the Content-Management-System Made Simple.
 
