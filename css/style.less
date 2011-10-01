@@ -742,7 +742,7 @@
     a:link,
     a:visited {
     	color:#000;
-    	text-decoration:underline;
+    	font-weight:bold;
     }
   }
   .move {
@@ -784,10 +784,10 @@
   	background-color:#f1f1f1;
   }
   tr.row1hover {
-  	background:desaturate(lighten(@maincolor,42),40);
+  	//background:desaturate(lighten(@maincolor,42),40);
   }
   tr.row2hover {
-  	background:desaturate(lighten(@maincolor,42),40);
+  	//background:desaturate(lighten(@maincolor,42),40);
   }
   td.pageicon {
   	background-color:#fff !important;
@@ -886,6 +886,7 @@
   }
 
   #page_content {
+    max-width:900px;
   	margin-bottom:10px; padding:20px 20px 20px 16px;
   	background:#dce2e5;
   	border-bottom-right-radius:8px;
@@ -936,6 +937,8 @@
       color:#fff;
       margin-bottom:27px; padding:20px 20px 60px 25px;
       .gradient-y(#000, #111);
+      border-top:1px solid @white10;
+      .box-shadow(-10px 0 10px @black40);
       
       div#navt_bookmarks {
         font-weight:bold;
@@ -1040,7 +1043,9 @@
   	border: 0px;
   }
   div.pageoptions {
-  	padding-top:10px;
+  	padding-top:40px;
+  	
+  	+ div a img {vertical-align:middle;}
   }
   a.pageoptions {
   	color: #343434;
@@ -1452,6 +1457,7 @@
         margin:0; padding:11px 11px 11px 42px;
         .border-radius(4px);
         border:1px solid #000;
+        .transition(0.2s linear box-shadow);
         
         &:focus {
           .box-shadow-triple(0 1px 0 @white50, inset 0 1px 2px @black30, 0 0 23px @maincolor);
@@ -1477,7 +1483,7 @@
         .box-shadow(0 1px 0 #444);
         
         &:active {
-          .box-shadow-double(0 1px 0 #444, inset 0 7px 7px @black50);
+          .box-shadow-double(0 1px 0 #444, inset 0 3px 3px @black30);
         }
       }
     }

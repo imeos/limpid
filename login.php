@@ -93,16 +93,16 @@
             <label for="username" title="<?php echo lang('username')?>">
               <?php echo lang('username')?>:
             </label>
-            <input id="lbusername" name="username" placeholder="<?php echo lang('username')?>" type="text" size="15" value="<?php echo htmlentities(isset($_POST['username'])?$_POST['username']:'')?>" /><br />
+            <input id="lbusername" name="username" placeholder="<?php echo lang('username')?>" type="text" size="15" value="<?php echo htmlentities(isset($_POST['username'])?$_POST['username']:'')?>" autofocus /><br />
           </p>
           <p class="password">
             <label for="password" title="<?php echo lang('password')?>">
               <?php echo lang('password')?>:
             </label>
             <?php if(isset($error) && $error!='') {
-						  echo '<input id="lbpassword" class="defaultfocus" name="password" type="password" placeholder="'.lang('password').'" size="15" /><br />';
+						  echo '<input id="lbpassword" class="defaultfocus" name="password" type="password" placeholder="'.lang('password').'" size="15"><br />';
 						} else {
-						  echo '<input id="lbpassword" name="password" type="password" placeholder="'.lang('password').'" size="15" /><br />';
+						  echo '<input id="lbpassword" name="password" type="password" placeholder="'.lang('password').'" size="15"><br />';
 						} ?>
           </p>
           <p class="buttons">
