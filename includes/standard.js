@@ -10,18 +10,6 @@
 /*--------------------------------------------------
   1. Main navigation
   -------------------------------------------------- */
-  jQuery().ready(function(){
-    jQuery('#nav-main').accordion({ 
-        active:true, 
-        header:'a.head', 
-        navigation:true, 
-        event:'mouseover', 
-        fillSpace:false, 
-        animated:'easeslide' 
-    });
-    
-    $("#content_en_ifr").contents().find("body").css('color', 'red');
-  });
 
   $("#content_en_ifr").contents().find("body").css("background-color","#BADA55");
 

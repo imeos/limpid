@@ -47,60 +47,21 @@ class limpidTheme extends AdminTheme
 /*--------------------------------------------------
   3. HTML DisplayHTMLHeader()
   -------------------------------------------------- */
-  function DisplayHTMLHeader($showielink = false, $addt = '') {
-    global $gCms;
-    $config =& $gCms->GetConfig();
-    ?>
-    <head>
-      <title><?php echo $this->title ." | ". $this->cms->siteprefs['sitename'] ?></title>
+    function DisplayHTMLHeader($showielink = false, $addt = '')
+    {
+      parent::DisplayHTMLHeader($showielink,$addt);
+?>
 
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <meta name="Generator" content="CMS Made Simple - Copyright (C) 2004-<?php echo date("y"); ?> Ted Kulp. All rights reserved.">
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <meta name="robots" content="noindex, nofollow">
-      <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-
-      <link rel="shortcut icon" href="themes/limpid/images/icons/system/favicon.ico">
-      <link rel="Bookmark" href="themes/limpid/images/system/icons/favicon.ico">
-
-      <link rel="stylesheet" type="text/css" href="style.php">
-
-      <!--[if lt IE 9]>
-        <link rel="stylesheet" type="text/css" href="themes/limpid/css/ie8.css" />
-      <![endif]-->
-      <!--[if lt IE 8]>
-        <link rel="stylesheet" type="text/css" href="themes/limpid/css/ie7.css" />
-      <![endif]-->
-
-      <?php $this->OutputHeaderJavascript(); ?>
-
-      <!--[if lt IE 9]>
-      <script type="text/javascript" src="themes/limpid/includes/js/ie-html5shim.js"></script>
-      <script type="text/javascript" src="themes/limpid/includes/js/selectivizr.js"></script>
-      <script>
-      $(document).ready(function(){
-        $('.arrowr').replaceWith(' > ');
-      }); //$(document).ready 
-      </script>
-      <![endif]-->
-      <!-- THIS IS WHERE HEADER STUFF SHOULD GO -->
-
-      <?php $this->ThemeHeader(); ?>
-      <?php echo $addt ?>
-      <base href="<?php echo $config['root_url'] . '/' . $config['admin_dir'] . '/'; ?>" />
-    </head>
-
-    <?php
-  }
+<?php
+    }
   
 
 /*--------------------------------------------------
   4. ThemeHeader()
   -------------------------------------------------- */
 	function ThemeHeader(){
-	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.dimensions.js"></script>'."\n";
-	  echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.accordion.pack.js"></script>'."\n";
+	  //echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.dimensions.js"></script>'."\n";
+	  //echo '<script type="text/javascript" src="themes/limpid/includes/js/jquery.accordion.pack.js"></script>'."\n";
 		echo '<script type="text/javascript" src="themes/limpid/includes/standard.js"></script>'."\n";
 	}
 	
@@ -302,24 +263,24 @@ class limpidTheme extends AdminTheme
     return -1;
   }
 
-      $firstmodule = true;
-      foreach ($this->menuItems[$section]['children'] as $thisChild)
+  $firstmodule = true;
+  foreach ($this->menuItems[$section]['children'] as $thisChild)
+{
+$thisItem = $this->menuItems[$thisChild];
+if (! $thisItem['show_in_menu'] || strlen($thisItem['url']) < 1)
   {
-    $thisItem = $this->menuItems[$thisChild];
-    if (! $thisItem['show_in_menu'] || strlen($thisItem['url']) < 1)
-      {
-        continue;
-      }
+    continue;
+  }
 
-    // separate system modules from the rest.
-    if( preg_match( '/module=([^&]+)/', $thisItem['url'], $tmp) )
-      {
-        if( array_search( $tmp[1], $gCms->cmssystemmodules ) === FALSE && $firstmodule == true )
-    {
-      echo "<hr width=\"90%\"/>";
-      $firstmodule = false;
-    }
-      }
+// separate system modules from the rest.
+if( preg_match( '/module=([^&]+)/', $thisItem['url'], $tmp) )
+  {
+    if( !ModuleOperations::get_instance()->IsSystemModule($tmp[1]) && $firstmodule == true )
+{
+  echo "<hr width=\"90%\"/>";
+  $firstmodule = false;
+}
+  }
 
     echo "<div class=\"itemmenucontainer\">\n";
     echo '<div class="itemoverflow">';

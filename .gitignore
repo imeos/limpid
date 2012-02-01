@@ -1,0 +1,8 @@
+# ignore system files
+.DS_Store
+thumbs.db
+__MACOSX
+._*
+
+# ignore TextMate files
+*.tmproj
