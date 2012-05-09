@@ -10,7 +10,7 @@ Designed for maximum efficiency and user-friendliness when working with the back
 
 Created using modern webstandards and technologies for lightweight code and easy maintainability.
 
-![Sample Screenshot](http://stuff.imeos.com/persistent/limpid.png)
+![Sample Screenshot](http://stuff.imeos.org/persistent/limpid.png)
 Everything you see in the above screenshot, is pure CSS of course, except for the 7 + 2 Icons ;-)
 
 ## Installation
