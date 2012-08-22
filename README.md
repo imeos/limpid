@@ -6,7 +6,7 @@
 
 **Please see our blog (link above) for more info and to report bugs, etc.!**
 
-Only tested for CMSMS 1.9
+Only tested for CMSMS 1.10
 
 Designed for maximum efficiency and user-friendliness when working with the backend of the Content-Management-System Made Simple.
 
